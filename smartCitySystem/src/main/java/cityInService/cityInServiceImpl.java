@@ -30,7 +30,7 @@ public final class cityInServiceImpl {
     java.lang.String[] descriptorData = {
       "\n\031cityInSystemService.proto\022\rcityInServi" +
       "ce\"\035\n\rStringMessage\022\014\n\004city\030\001 \001(\t2^\n\rcit" +
-      "yInService\022M\n\rcityInService\022\034.cityInServ" +
+      "yInService\022M\n\rCityInService\022\034.cityInServ" +
       "ice.StringMessage\032\034.cityInService.String" +
       "Message\"\000B$\n\rcityInServiceB\021cityInServic" +
       "eImplP\001b\006proto3"

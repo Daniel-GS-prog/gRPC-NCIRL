@@ -13,6 +13,7 @@ CurrentTraffic/StringMessage$Builder.class
 Obstacles/ObstaclesGrpc$ObstaclesMethodDescriptorSupplier.class
 CurrentTraffic/CurrentTrafficGrpc$CurrentTrafficStub.class
 cityInService/cityInServiceGrpc$cityInServiceImplBase.class
+cityInService/cityInServiceServer$cityInServiceImpl.class
 cityInService/StringMessage$1.class
 Obstacles/ObstaclesGrpc$ObstaclesFutureStub.class
 Obstacles/ObstaclesGrpc$1.class
@@ -24,6 +25,7 @@ CurrentTraffic/CurrentTrafficGrpc$MethodHandlers.class
 cityInService/cityInServiceGrpc$cityInServiceFutureStub.class
 Obstacles/StringMessage$Builder.class
 Obstacles/ObstaclesGrpc$MethodHandlers.class
+cityInService/cityInServiceServer.class
 cityInService/cityInServiceGrpc$cityInServiceBaseDescriptorSupplier.class
 cityInService/cityInServiceGrpc$cityInServiceStub.class
 Obstacles/ObstaclesGrpc$ObstaclesFileDescriptorSupplier.class

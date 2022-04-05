@@ -31,7 +31,7 @@ public final class cityInServiceGrpc {
       cityInService.StringMessage> getCityInServiceMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "cityInService",
+      fullMethodName = SERVICE_NAME + '/' + "CityInService",
       requestType = cityInService.StringMessage.class,
       responseType = cityInService.StringMessage.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -45,13 +45,13 @@ public final class cityInServiceGrpc {
               io.grpc.MethodDescriptor.<cityInService.StringMessage, cityInService.StringMessage>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "cityInService.cityInService", "cityInService"))
+                  "cityInService.cityInService", "CityInService"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   cityInService.StringMessage.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   cityInService.StringMessage.getDefaultInstance()))
-                  .setSchemaDescriptor(new cityInServiceMethodDescriptorSupplier("cityInService"))
+                  .setSchemaDescriptor(new cityInServiceMethodDescriptorSupplier("CityInService"))
                   .build();
           }
         }
