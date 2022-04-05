@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "Obstacles";
+option java_outer_classname = "ObstaclesServiceImpl";
+
+package Obstacles;
+
+service Obstacles{
+
+	 //service deals with possible obstacles in a selected path
+	 // the client selects two points of the city
+	 // the server divides that rout into three points
+	 // and returns a messages stating whether the points are clear
+	 // of obstacles
+
+	rpc Obstacles (StringMessage) returns (stream StringMessage){}
+}
+
+message StringMessage{
+
+	string pointA = 1;
+}

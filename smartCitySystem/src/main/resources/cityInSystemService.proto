@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "cityInService";
+option java_outer_classname = "cityInServiceImpl";
+
+
+package cityInService;
+
+service cityInService{
+
+	// service deals with cities in the systems.
+	// the client can request whether a specific city is in the system.
+	// the server returns a message stating if the city is in the system.
+
+	rpc cityInService(StringMessage) returns (StringMessage){}
+}
+
+message StringMessage{
+
+	string city = 1;
+
+}
