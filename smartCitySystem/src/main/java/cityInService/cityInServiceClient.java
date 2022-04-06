@@ -24,7 +24,7 @@ public class cityInServiceClient {
 		// Building a message:
 		Scanner keyboard = new Scanner(System.in);
 		
-		System.out.println("Here we are!");
+		System.out.println("Please enter the city you would like to check: ");
 		String city = keyboard.next();
 		
 		

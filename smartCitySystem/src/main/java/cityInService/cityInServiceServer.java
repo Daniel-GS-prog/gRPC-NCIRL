@@ -43,7 +43,7 @@ public class cityInServiceServer {
 			
 			// Find put what was the content of the message sent by the client
 			String city = request.getCity();
-			System.out.println("Out first request string is: " + city);
+			System.out.println("The city requested is: " + city);
 			
 			// Building the server response:
 			StringMessage.Builder responseBuilder = StringMessage.newBuilder();
