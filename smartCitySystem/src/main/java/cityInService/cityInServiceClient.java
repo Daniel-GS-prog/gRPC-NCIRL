@@ -1,9 +1,9 @@
 package cityInService;
 
 import java.util.concurrent.TimeUnit;
+import java.util.Scanner;
 
 import cityInService.cityInServiceGrpc.cityInServiceBlockingStub;
-import cityInService.cityInServiceGrpc.cityInServiceStub;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
@@ -22,7 +22,13 @@ public class cityInServiceClient {
 		ManagedChannel newChannel = ManagedChannelBuilder.forAddress(host, port).usePlaintext().build();
 		
 		// Building a message:
-		StringMessage cString = StringMessage.newBuilder().setCity("Caracas").build();
+		Scanner keyboard = new Scanner(System.in);
+		
+		System.out.println("Here we are!");
+		String city = keyboard.next();
+		
+		
+		StringMessage cString = StringMessage.newBuilder().setCity(city).build();
 		
 		// Create a stub, pass the channel to the stub
 		cityInServiceBlockingStub bstub = cityInServiceGrpc.newBlockingStub(newChannel);
