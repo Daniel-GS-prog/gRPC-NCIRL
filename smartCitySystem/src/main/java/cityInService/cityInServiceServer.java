@@ -15,6 +15,9 @@ public class cityInServiceServer {
 	
 	public static void main(String[] args) throws InterruptedException, IOException {
 		
+		// --------------------------------------------------------------------------------------------
+		// ----------------Creating server and starting connection-------------------------------------
+		
 		cityInServiceServer ourServer = new cityInServiceServer();
 		
 		ourServer.start();
@@ -37,6 +40,10 @@ public class cityInServiceServer {
 	
 		//Extend abstract base class for our own implementation
 		static class cityInServiceImpl extends cityInServiceImplBase{
+			
+			
+		// --------------------------------------------------------------------------------------------
+		// ----------------Implementation of first rpc CityInService-----------------------------------
 	
 		@Override
 		public void cityInService(StringMessage request, StreamObserver <StringMessage>responseObserver){
@@ -54,6 +61,9 @@ public class cityInServiceServer {
 			responseObserver.onCompleted();
 			
 		}
+		
+		// --------------------------------------------------------------------------------------------
+		// ----------------End of Implementation of first rpc CityInService----------------------------
 	
 	}
 }
