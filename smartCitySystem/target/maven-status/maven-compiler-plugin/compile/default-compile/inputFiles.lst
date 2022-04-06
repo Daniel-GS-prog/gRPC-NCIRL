@@ -1,3 +1,4 @@
+/Users/ErDenien/Desktop/NCIRL/SECOND SEMESTER/DISTRIBUTED SYSTEMS/My - CA/gRPC-NCIRL/smartCitySystem/src/main/java/cityInService/IntMessage.java
 /Users/ErDenien/Desktop/NCIRL/SECOND SEMESTER/DISTRIBUTED SYSTEMS/My - CA/gRPC-NCIRL/smartCitySystem/src/main/java/Obstacles/StringMessage.java
 /Users/ErDenien/Desktop/NCIRL/SECOND SEMESTER/DISTRIBUTED SYSTEMS/My - CA/gRPC-NCIRL/smartCitySystem/src/main/java/CurrentTraffic/StringMessage.java
 /Users/ErDenien/Desktop/NCIRL/SECOND SEMESTER/DISTRIBUTED SYSTEMS/My - CA/gRPC-NCIRL/smartCitySystem/src/main/java/cityInService/cityInServiceGrpc.java
@@ -5,9 +6,11 @@
 /Users/ErDenien/Desktop/NCIRL/SECOND SEMESTER/DISTRIBUTED SYSTEMS/My - CA/gRPC-NCIRL/smartCitySystem/src/main/java/cityInService/StringMessage.java
 /Users/ErDenien/Desktop/NCIRL/SECOND SEMESTER/DISTRIBUTED SYSTEMS/My - CA/gRPC-NCIRL/smartCitySystem/src/main/java/Obstacles/ObstaclesServiceImpl.java
 /Users/ErDenien/Desktop/NCIRL/SECOND SEMESTER/DISTRIBUTED SYSTEMS/My - CA/gRPC-NCIRL/smartCitySystem/src/main/java/CurrentTraffic/CurrentTrafficServiceImpl.java
+/Users/ErDenien/Desktop/NCIRL/SECOND SEMESTER/DISTRIBUTED SYSTEMS/My - CA/gRPC-NCIRL/smartCitySystem/src/main/java/cityInService/IntMessageOrBuilder.java
 /Users/ErDenien/Desktop/NCIRL/SECOND SEMESTER/DISTRIBUTED SYSTEMS/My - CA/gRPC-NCIRL/smartCitySystem/src/main/java/cityInService/cityInServiceImpl.java
 /Users/ErDenien/Desktop/NCIRL/SECOND SEMESTER/DISTRIBUTED SYSTEMS/My - CA/gRPC-NCIRL/smartCitySystem/src/main/java/cityInService/cityInServiceServer.java
 /Users/ErDenien/Desktop/NCIRL/SECOND SEMESTER/DISTRIBUTED SYSTEMS/My - CA/gRPC-NCIRL/smartCitySystem/src/main/java/cityInService/StringMessageOrBuilder.java
 /Users/ErDenien/Desktop/NCIRL/SECOND SEMESTER/DISTRIBUTED SYSTEMS/My - CA/gRPC-NCIRL/smartCitySystem/src/main/java/Obstacles/ObstaclesGrpc.java
 /Users/ErDenien/Desktop/NCIRL/SECOND SEMESTER/DISTRIBUTED SYSTEMS/My - CA/gRPC-NCIRL/smartCitySystem/src/main/java/CurrentTraffic/StringMessageOrBuilder.java
 /Users/ErDenien/Desktop/NCIRL/SECOND SEMESTER/DISTRIBUTED SYSTEMS/My - CA/gRPC-NCIRL/smartCitySystem/src/main/java/Obstacles/StringMessageOrBuilder.java
+/Users/ErDenien/Desktop/NCIRL/SECOND SEMESTER/DISTRIBUTED SYSTEMS/My - CA/gRPC-NCIRL/smartCitySystem/src/main/java/cityInService/cityInServiceClient.java

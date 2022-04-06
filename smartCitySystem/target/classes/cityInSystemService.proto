@@ -9,15 +9,27 @@ package cityInService;
 
 service cityInService{
 
+
+	rpc CityInService(StringMessage) returns (StringMessage){}
 	// service deals with cities in the systems.
 	// the client can request whether a specific city is in the system.
 	// the server returns a message stating if the city is in the system.
 
-	rpc CityInService(StringMessage) returns (StringMessage){}
+	rpc TemperatureInCity(StringMessage) returns (IntMessage){}
+	// service deals with the current temperature in a specific city.
+	// the client provides a city.
+	// the server returns a message stating the temperature in that city in real time.
 }
 
 message StringMessage{
 
 	string city = 1;
+
+}
+
+
+message IntMessage{
+
+	int32 temperature = 2;
 
 }

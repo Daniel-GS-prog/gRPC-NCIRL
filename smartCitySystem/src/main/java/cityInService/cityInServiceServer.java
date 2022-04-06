@@ -3,8 +3,10 @@ package cityInService;
 
 
 import java.io.IOException;
+import java.util.Random;
 
 import cityInService.cityInServiceGrpc.cityInServiceImplBase;
+
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
@@ -16,7 +18,7 @@ public class cityInServiceServer {
 	public static void main(String[] args) throws InterruptedException, IOException {
 		
 		// --------------------------------------------------------------------------------------------
-		// ----------------Creating server and starting connection-------------------------------------
+		// --------------- Creating server and starting connection ------------------------------------
 		
 		cityInServiceServer ourServer = new cityInServiceServer();
 		
@@ -43,7 +45,7 @@ public class cityInServiceServer {
 			
 			
 		// --------------------------------------------------------------------------------------------
-		// ----------------Implementation of first rpc CityInService-----------------------------------
+		// --------------- Implementation of rpc CityInService ----------------------------------------
 	
 		@Override
 		public void cityInService(StringMessage request, StreamObserver <StringMessage>responseObserver){
@@ -63,7 +65,36 @@ public class cityInServiceServer {
 		}
 		
 		// --------------------------------------------------------------------------------------------
-		// ----------------End of Implementation of first rpc CityInService----------------------------
+		// --------------- End of Implementation of rpc CityInService ---------------------------------
+		
+		
+		// --------------------------------------------------------------------------------------------
+		// --------------- Implementation of rpc TemperatureInCity ------------------------------------
 	
+		@Override
+		public void temperatureInCity(StringMessage request, StreamObserver <IntMessage> responseObserver) {
+			
+			// Find put what was the content of the message sent by the client
+			String city = request.getCity();
+			System.out.println("The city requested is: " + city);
+			
+			// Now build the response
+			IntMessage.Builder responseBuilder = IntMessage.newBuilder();
+			
+			Random random = new Random();
+			
+			// Generating a random number for temperature:
+			int degrees = random.nextInt(5, 25);
+			
+			responseBuilder.setTemperature(degrees);
+			
+			responseObserver.onNext(responseBuilder.build());
+			responseObserver.onCompleted();
+			
+		// --------------------------------------------------------------------------------------------
+		// --------------- End of Implementation of rpc TemperatureInCity -----------------------------
+			
+			
+		}
 	}
 }

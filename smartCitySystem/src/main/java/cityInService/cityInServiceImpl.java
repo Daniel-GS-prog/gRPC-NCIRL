@@ -19,6 +19,11 @@ public final class cityInServiceImpl {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cityInService_StringMessage_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cityInService_IntMessage_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cityInService_IntMessage_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -29,11 +34,14 @@ public final class cityInServiceImpl {
   static {
     java.lang.String[] descriptorData = {
       "\n\031cityInSystemService.proto\022\rcityInServi" +
-      "ce\"\035\n\rStringMessage\022\014\n\004city\030\001 \001(\t2^\n\rcit" +
-      "yInService\022M\n\rCityInService\022\034.cityInServ" +
-      "ice.StringMessage\032\034.cityInService.String" +
-      "Message\"\000B$\n\rcityInServiceB\021cityInServic" +
-      "eImplP\001b\006proto3"
+      "ce\"\035\n\rStringMessage\022\014\n\004city\030\001 \001(\t\"!\n\nInt" +
+      "Message\022\023\n\013temperature\030\002 \001(\0052\256\001\n\rcityInS" +
+      "ervice\022M\n\rCityInService\022\034.cityInService." +
+      "StringMessage\032\034.cityInService.StringMess" +
+      "age\"\000\022N\n\021TemperatureInCity\022\034.cityInServi" +
+      "ce.StringMessage\032\031.cityInService.IntMess" +
+      "age\"\000B$\n\rcityInServiceB\021cityInServiceImp" +
+      "lP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -53,6 +61,12 @@ public final class cityInServiceImpl {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cityInService_StringMessage_descriptor,
         new java.lang.String[] { "City", });
+    internal_static_cityInService_IntMessage_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_cityInService_IntMessage_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cityInService_IntMessage_descriptor,
+        new java.lang.String[] { "Temperature", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

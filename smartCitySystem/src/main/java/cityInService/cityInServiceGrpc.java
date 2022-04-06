@@ -59,6 +59,38 @@ public final class cityInServiceGrpc {
      return getCityInServiceMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<cityInService.StringMessage,
+      cityInService.IntMessage> getTemperatureInCityMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TemperatureInCity",
+      requestType = cityInService.StringMessage.class,
+      responseType = cityInService.IntMessage.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cityInService.StringMessage,
+      cityInService.IntMessage> getTemperatureInCityMethod() {
+    io.grpc.MethodDescriptor<cityInService.StringMessage, cityInService.IntMessage> getTemperatureInCityMethod;
+    if ((getTemperatureInCityMethod = cityInServiceGrpc.getTemperatureInCityMethod) == null) {
+      synchronized (cityInServiceGrpc.class) {
+        if ((getTemperatureInCityMethod = cityInServiceGrpc.getTemperatureInCityMethod) == null) {
+          cityInServiceGrpc.getTemperatureInCityMethod = getTemperatureInCityMethod = 
+              io.grpc.MethodDescriptor.<cityInService.StringMessage, cityInService.IntMessage>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "cityInService.cityInService", "TemperatureInCity"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cityInService.StringMessage.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cityInService.IntMessage.getDefaultInstance()))
+                  .setSchemaDescriptor(new cityInServiceMethodDescriptorSupplier("TemperatureInCity"))
+                  .build();
+          }
+        }
+     }
+     return getTemperatureInCityMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -93,6 +125,13 @@ public final class cityInServiceGrpc {
       asyncUnimplementedUnaryCall(getCityInServiceMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void temperatureInCity(cityInService.StringMessage request,
+        io.grpc.stub.StreamObserver<cityInService.IntMessage> responseObserver) {
+      asyncUnimplementedUnaryCall(getTemperatureInCityMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -102,6 +141,13 @@ public final class cityInServiceGrpc {
                 cityInService.StringMessage,
                 cityInService.StringMessage>(
                   this, METHODID_CITY_IN_SERVICE)))
+          .addMethod(
+            getTemperatureInCityMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                cityInService.StringMessage,
+                cityInService.IntMessage>(
+                  this, METHODID_TEMPERATURE_IN_CITY)))
           .build();
     }
   }
@@ -131,6 +177,14 @@ public final class cityInServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getCityInServiceMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void temperatureInCity(cityInService.StringMessage request,
+        io.grpc.stub.StreamObserver<cityInService.IntMessage> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getTemperatureInCityMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -156,6 +210,13 @@ public final class cityInServiceGrpc {
     public cityInService.StringMessage cityInService(cityInService.StringMessage request) {
       return blockingUnaryCall(
           getChannel(), getCityInServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public cityInService.IntMessage temperatureInCity(cityInService.StringMessage request) {
+      return blockingUnaryCall(
+          getChannel(), getTemperatureInCityMethod(), getCallOptions(), request);
     }
   }
 
@@ -184,9 +245,18 @@ public final class cityInServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getCityInServiceMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cityInService.IntMessage> temperatureInCity(
+        cityInService.StringMessage request) {
+      return futureUnaryCall(
+          getChannel().newCall(getTemperatureInCityMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CITY_IN_SERVICE = 0;
+  private static final int METHODID_TEMPERATURE_IN_CITY = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -208,6 +278,10 @@ public final class cityInServiceGrpc {
         case METHODID_CITY_IN_SERVICE:
           serviceImpl.cityInService((cityInService.StringMessage) request,
               (io.grpc.stub.StreamObserver<cityInService.StringMessage>) responseObserver);
+          break;
+        case METHODID_TEMPERATURE_IN_CITY:
+          serviceImpl.temperatureInCity((cityInService.StringMessage) request,
+              (io.grpc.stub.StreamObserver<cityInService.IntMessage>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -271,6 +345,7 @@ public final class cityInServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new cityInServiceFileDescriptorSupplier())
               .addMethod(getCityInServiceMethod())
+              .addMethod(getTemperatureInCityMethod())
               .build();
         }
       }
