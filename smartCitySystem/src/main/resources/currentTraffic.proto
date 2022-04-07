@@ -15,10 +15,20 @@ service currentTraffic{
 	// The client selects a city.
 	// The server returns the current state of traffic in the selected city (optimal, slow, heavy),
 	// and the delay in terms of minutes
+
+	rpc TrafficInCity(stream DatesTraffic) returns (StringMessage){}
+	// service deals with traffic in real time in several parts of the city.
+	// The client selects different streets in the city.
+	// the server returns the current state of traffic for all street selected by client.
 }
 
 message StringMessage{
 
 	string city = 1;
+
+}
+
+message DatesTraffic{
+	int32 date = 1;
 
 }

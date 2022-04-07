@@ -19,6 +19,11 @@ public final class currentTrafficServiceImpl {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_currentTraffic_StringMessage_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_currentTraffic_DatesTraffic_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_currentTraffic_DatesTraffic_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -29,11 +34,14 @@ public final class currentTrafficServiceImpl {
   static {
     java.lang.String[] descriptorData = {
       "\n\024currentTraffic.proto\022\016currentTraffic\"\035" +
-      "\n\rStringMessage\022\014\n\004city\030\001 \001(\t2d\n\016current" +
-      "Traffic\022R\n\016CurrentTraffic\022\035.currentTraff" +
-      "ic.StringMessage\032\035.currentTraffic.String" +
-      "Message\"\0000\001B-\n\016currentTrafficB\031currentTr" +
-      "afficServiceImplP\001b\006proto3"
+      "\n\rStringMessage\022\014\n\004city\030\001 \001(\t\"\034\n\014DatesTr" +
+      "affic\022\014\n\004date\030\001 \001(\0052\266\001\n\016currentTraffic\022R" +
+      "\n\016CurrentTraffic\022\035.currentTraffic.String" +
+      "Message\032\035.currentTraffic.StringMessage\"\000" +
+      "0\001\022P\n\rTrafficInCity\022\034.currentTraffic.Dat" +
+      "esTraffic\032\035.currentTraffic.StringMessage" +
+      "\"\000(\001B-\n\016currentTrafficB\031currentTrafficSe" +
+      "rviceImplP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -53,6 +61,12 @@ public final class currentTrafficServiceImpl {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_currentTraffic_StringMessage_descriptor,
         new java.lang.String[] { "City", });
+    internal_static_currentTraffic_DatesTraffic_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_currentTraffic_DatesTraffic_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_currentTraffic_DatesTraffic_descriptor,
+        new java.lang.String[] { "Date", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

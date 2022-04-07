@@ -1,7 +1,11 @@
 package currentTraffic;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
+
+import com.google.protobuf.Int32Value;
 
 import currentTraffic.currentTrafficGrpc.currentTrafficImplBase;
 import io.grpc.Server;
@@ -13,6 +17,10 @@ public class currentTrafficServer {
 	private Server server;
 	
 	public static void main(String[] args) throws InterruptedException, IOException {
+		
+		
+		// --------------------------------------------------------------------------------------------
+		// --------------- Creating server and starting connection ------------------------------------
 		
 		currentTrafficServer ourServer = new currentTrafficServer();
 		
@@ -36,6 +44,9 @@ public class currentTrafficServer {
 
 	static class currentTrafficImpl extends currentTrafficImplBase{
 		
+		
+		// --------------------------------------------------------------------------------------------
+		// --------------- Implementation of rpc CurrentTraffic ---------------------------------------
 		@Override
 		public void currentTraffic (StringMessage request, StreamObserver<StringMessage> responseObserver) {
 			
@@ -78,6 +89,64 @@ public class currentTrafficServer {
 			responseObserver.onCompleted();
 			
 		}
+		
+		// --------------------------------------------------------------------------------------------
+		// --------------- End of Implementation of rpc CurrentTraffic --------------------------------
+		
+		
+		// --------------------------------------------------------------------------------------------
+		// --------------- Implementation of rpc TrafficInCity ----------------------------------------
+		
+		public StreamObserver<DatesTraffic> TrafficInCity(StreamObserver<StringMessage> responseObserver){
+			
+			return new StreamObserver<DatesTraffic>() {
+				
+				ArrayList<Float> dates = new ArrayList<Float>();
+
+				@Override
+				public void onNext(DatesTraffic value) {
+					// TODO Auto-generated method stub
+					float incoming = value.getDate();
+					
+					dates.add(incoming);
+				}
+
+				@Override
+				public void onError(Throwable t) {
+					// TODO Auto-generated method stub
+					
+				}
+
+				@Override
+				public void onCompleted() {
+					// TODO Auto-generated method stub
+					
+					int i, x;
+					
+					for (i = 0; 0 < dates.size(); i++) {
+						
+						StringMessage reply = StringMessage.newBuilder().build();
+						
+						responseObserver.onNext(reply);
+
+						responseObserver.onCompleted();
+						
+						
+					}
+					
+					
+					
+					
+					
+					
+					
+				}
+				
+				
+			};
+			
+		}
+			
 		
 	}
 }
