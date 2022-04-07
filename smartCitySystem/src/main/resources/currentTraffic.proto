@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "currentTraffic";
+option java_outer_classname = "currentTrafficServiceImpl";
+
+
+package currentTraffic;
+
+service currentTraffic{
+
+
+	rpc CurrentTraffic(StringMessage) returns (stream StringMessage){}
+	// service deals state of traffic in real time.
+	// The client selects a city.
+	// The server returns the current state of traffic in the selected city (optimal, slow, heavy),
+	// and the delay in terms of minutes
+}
+
+message StringMessage{
+
+	string city = 1;
+
+}

@@ -1,4 +1,4 @@
-package CurrentTraffic;
+package currentTraffic;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
@@ -19,169 +19,177 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.15.0)",
-    comments = "Source: CurrentTrafficService.proto")
-public final class CurrentTrafficGrpc {
+    comments = "Source: currentTraffic.proto")
+public final class currentTrafficGrpc {
 
-  private CurrentTrafficGrpc() {}
+  private currentTrafficGrpc() {}
 
-  public static final String SERVICE_NAME = "CurrentTraffic.CurrentTraffic";
+  public static final String SERVICE_NAME = "currentTraffic.currentTraffic";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<CurrentTraffic.StringMessage,
-      CurrentTraffic.StringMessage> getCurrentTrafficServiceMethod;
+  private static volatile io.grpc.MethodDescriptor<currentTraffic.StringMessage,
+      currentTraffic.StringMessage> getCurrentTrafficMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "currentTrafficService",
-      requestType = CurrentTraffic.StringMessage.class,
-      responseType = CurrentTraffic.StringMessage.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-  public static io.grpc.MethodDescriptor<CurrentTraffic.StringMessage,
-      CurrentTraffic.StringMessage> getCurrentTrafficServiceMethod() {
-    io.grpc.MethodDescriptor<CurrentTraffic.StringMessage, CurrentTraffic.StringMessage> getCurrentTrafficServiceMethod;
-    if ((getCurrentTrafficServiceMethod = CurrentTrafficGrpc.getCurrentTrafficServiceMethod) == null) {
-      synchronized (CurrentTrafficGrpc.class) {
-        if ((getCurrentTrafficServiceMethod = CurrentTrafficGrpc.getCurrentTrafficServiceMethod) == null) {
-          CurrentTrafficGrpc.getCurrentTrafficServiceMethod = getCurrentTrafficServiceMethod = 
-              io.grpc.MethodDescriptor.<CurrentTraffic.StringMessage, CurrentTraffic.StringMessage>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+      fullMethodName = SERVICE_NAME + '/' + "CurrentTraffic",
+      requestType = currentTraffic.StringMessage.class,
+      responseType = currentTraffic.StringMessage.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<currentTraffic.StringMessage,
+      currentTraffic.StringMessage> getCurrentTrafficMethod() {
+    io.grpc.MethodDescriptor<currentTraffic.StringMessage, currentTraffic.StringMessage> getCurrentTrafficMethod;
+    if ((getCurrentTrafficMethod = currentTrafficGrpc.getCurrentTrafficMethod) == null) {
+      synchronized (currentTrafficGrpc.class) {
+        if ((getCurrentTrafficMethod = currentTrafficGrpc.getCurrentTrafficMethod) == null) {
+          currentTrafficGrpc.getCurrentTrafficMethod = getCurrentTrafficMethod = 
+              io.grpc.MethodDescriptor.<currentTraffic.StringMessage, currentTraffic.StringMessage>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(
-                  "CurrentTraffic.CurrentTraffic", "currentTrafficService"))
+                  "currentTraffic.currentTraffic", "CurrentTraffic"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  CurrentTraffic.StringMessage.getDefaultInstance()))
+                  currentTraffic.StringMessage.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  CurrentTraffic.StringMessage.getDefaultInstance()))
-                  .setSchemaDescriptor(new CurrentTrafficMethodDescriptorSupplier("currentTrafficService"))
+                  currentTraffic.StringMessage.getDefaultInstance()))
+                  .setSchemaDescriptor(new currentTrafficMethodDescriptorSupplier("CurrentTraffic"))
                   .build();
           }
         }
      }
-     return getCurrentTrafficServiceMethod;
+     return getCurrentTrafficMethod;
   }
 
   /**
    * Creates a new async stub that supports all call types for the service
    */
-  public static CurrentTrafficStub newStub(io.grpc.Channel channel) {
-    return new CurrentTrafficStub(channel);
+  public static currentTrafficStub newStub(io.grpc.Channel channel) {
+    return new currentTrafficStub(channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
-  public static CurrentTrafficBlockingStub newBlockingStub(
+  public static currentTrafficBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new CurrentTrafficBlockingStub(channel);
+    return new currentTrafficBlockingStub(channel);
   }
 
   /**
    * Creates a new ListenableFuture-style stub that supports unary calls on the service
    */
-  public static CurrentTrafficFutureStub newFutureStub(
+  public static currentTrafficFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new CurrentTrafficFutureStub(channel);
+    return new currentTrafficFutureStub(channel);
   }
 
   /**
    */
-  public static abstract class CurrentTrafficImplBase implements io.grpc.BindableService {
+  public static abstract class currentTrafficImplBase implements io.grpc.BindableService {
 
     /**
      */
-    public io.grpc.stub.StreamObserver<CurrentTraffic.StringMessage> currentTrafficService(
-        io.grpc.stub.StreamObserver<CurrentTraffic.StringMessage> responseObserver) {
-      return asyncUnimplementedStreamingCall(getCurrentTrafficServiceMethod(), responseObserver);
+    public void currentTraffic(currentTraffic.StringMessage request,
+        io.grpc.stub.StreamObserver<currentTraffic.StringMessage> responseObserver) {
+      asyncUnimplementedUnaryCall(getCurrentTrafficMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            getCurrentTrafficServiceMethod(),
-            asyncClientStreamingCall(
+            getCurrentTrafficMethod(),
+            asyncServerStreamingCall(
               new MethodHandlers<
-                CurrentTraffic.StringMessage,
-                CurrentTraffic.StringMessage>(
-                  this, METHODID_CURRENT_TRAFFIC_SERVICE)))
+                currentTraffic.StringMessage,
+                currentTraffic.StringMessage>(
+                  this, METHODID_CURRENT_TRAFFIC)))
           .build();
     }
   }
 
   /**
    */
-  public static final class CurrentTrafficStub extends io.grpc.stub.AbstractStub<CurrentTrafficStub> {
-    private CurrentTrafficStub(io.grpc.Channel channel) {
+  public static final class currentTrafficStub extends io.grpc.stub.AbstractStub<currentTrafficStub> {
+    private currentTrafficStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private CurrentTrafficStub(io.grpc.Channel channel,
+    private currentTrafficStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected CurrentTrafficStub build(io.grpc.Channel channel,
+    protected currentTrafficStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new CurrentTrafficStub(channel, callOptions);
+      return new currentTrafficStub(channel, callOptions);
     }
 
     /**
      */
-    public io.grpc.stub.StreamObserver<CurrentTraffic.StringMessage> currentTrafficService(
-        io.grpc.stub.StreamObserver<CurrentTraffic.StringMessage> responseObserver) {
-      return asyncClientStreamingCall(
-          getChannel().newCall(getCurrentTrafficServiceMethod(), getCallOptions()), responseObserver);
+    public void currentTraffic(currentTraffic.StringMessage request,
+        io.grpc.stub.StreamObserver<currentTraffic.StringMessage> responseObserver) {
+      asyncServerStreamingCall(
+          getChannel().newCall(getCurrentTrafficMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
   /**
    */
-  public static final class CurrentTrafficBlockingStub extends io.grpc.stub.AbstractStub<CurrentTrafficBlockingStub> {
-    private CurrentTrafficBlockingStub(io.grpc.Channel channel) {
+  public static final class currentTrafficBlockingStub extends io.grpc.stub.AbstractStub<currentTrafficBlockingStub> {
+    private currentTrafficBlockingStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private CurrentTrafficBlockingStub(io.grpc.Channel channel,
+    private currentTrafficBlockingStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected CurrentTrafficBlockingStub build(io.grpc.Channel channel,
+    protected currentTrafficBlockingStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new CurrentTrafficBlockingStub(channel, callOptions);
+      return new currentTrafficBlockingStub(channel, callOptions);
+    }
+
+    /**
+     */
+    public java.util.Iterator<currentTraffic.StringMessage> currentTraffic(
+        currentTraffic.StringMessage request) {
+      return blockingServerStreamingCall(
+          getChannel(), getCurrentTrafficMethod(), getCallOptions(), request);
     }
   }
 
   /**
    */
-  public static final class CurrentTrafficFutureStub extends io.grpc.stub.AbstractStub<CurrentTrafficFutureStub> {
-    private CurrentTrafficFutureStub(io.grpc.Channel channel) {
+  public static final class currentTrafficFutureStub extends io.grpc.stub.AbstractStub<currentTrafficFutureStub> {
+    private currentTrafficFutureStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private CurrentTrafficFutureStub(io.grpc.Channel channel,
+    private currentTrafficFutureStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected CurrentTrafficFutureStub build(io.grpc.Channel channel,
+    protected currentTrafficFutureStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new CurrentTrafficFutureStub(channel, callOptions);
+      return new currentTrafficFutureStub(channel, callOptions);
     }
   }
 
-  private static final int METHODID_CURRENT_TRAFFIC_SERVICE = 0;
+  private static final int METHODID_CURRENT_TRAFFIC = 0;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final CurrentTrafficImplBase serviceImpl;
+    private final currentTrafficImplBase serviceImpl;
     private final int methodId;
 
-    MethodHandlers(CurrentTrafficImplBase serviceImpl, int methodId) {
+    MethodHandlers(currentTrafficImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -190,6 +198,10 @@ public final class CurrentTrafficGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_CURRENT_TRAFFIC:
+          serviceImpl.currentTraffic((currentTraffic.StringMessage) request,
+              (io.grpc.stub.StreamObserver<currentTraffic.StringMessage>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -200,41 +212,38 @@ public final class CurrentTrafficGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_CURRENT_TRAFFIC_SERVICE:
-          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.currentTrafficService(
-              (io.grpc.stub.StreamObserver<CurrentTraffic.StringMessage>) responseObserver);
         default:
           throw new AssertionError();
       }
     }
   }
 
-  private static abstract class CurrentTrafficBaseDescriptorSupplier
+  private static abstract class currentTrafficBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
-    CurrentTrafficBaseDescriptorSupplier() {}
+    currentTrafficBaseDescriptorSupplier() {}
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return CurrentTraffic.CurrentTrafficServiceImpl.getDescriptor();
+      return currentTraffic.currentTrafficServiceImpl.getDescriptor();
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
-      return getFileDescriptor().findServiceByName("CurrentTraffic");
+      return getFileDescriptor().findServiceByName("currentTraffic");
     }
   }
 
-  private static final class CurrentTrafficFileDescriptorSupplier
-      extends CurrentTrafficBaseDescriptorSupplier {
-    CurrentTrafficFileDescriptorSupplier() {}
+  private static final class currentTrafficFileDescriptorSupplier
+      extends currentTrafficBaseDescriptorSupplier {
+    currentTrafficFileDescriptorSupplier() {}
   }
 
-  private static final class CurrentTrafficMethodDescriptorSupplier
-      extends CurrentTrafficBaseDescriptorSupplier
+  private static final class currentTrafficMethodDescriptorSupplier
+      extends currentTrafficBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
     private final String methodName;
 
-    CurrentTrafficMethodDescriptorSupplier(String methodName) {
+    currentTrafficMethodDescriptorSupplier(String methodName) {
       this.methodName = methodName;
     }
 
@@ -249,12 +258,12 @@ public final class CurrentTrafficGrpc {
   public static io.grpc.ServiceDescriptor getServiceDescriptor() {
     io.grpc.ServiceDescriptor result = serviceDescriptor;
     if (result == null) {
-      synchronized (CurrentTrafficGrpc.class) {
+      synchronized (currentTrafficGrpc.class) {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new CurrentTrafficFileDescriptorSupplier())
-              .addMethod(getCurrentTrafficServiceMethod())
+              .setSchemaDescriptor(new currentTrafficFileDescriptorSupplier())
+              .addMethod(getCurrentTrafficMethod())
               .build();
         }
       }
