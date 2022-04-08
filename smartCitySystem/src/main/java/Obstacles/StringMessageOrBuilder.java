@@ -8,12 +8,12 @@ public interface StringMessageOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string street = 1;</code>
+   * <code>string city = 1;</code>
    */
-  java.lang.String getStreet();
+  java.lang.String getCity();
   /**
-   * <code>string street = 1;</code>
+   * <code>string city = 1;</code>
    */
   com.google.protobuf.ByteString
-      getStreetBytes();
+      getCityBytes();
 }

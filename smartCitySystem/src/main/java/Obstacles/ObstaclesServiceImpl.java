@@ -28,11 +28,11 @@ public final class obstaclesServiceImpl {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017obstacles.proto\022\tobstacles\"\037\n\rStringMe" +
-      "ssage\022\016\n\006street\030\001 \001(\t2R\n\tobstacles\022E\n\tOb" +
-      "stacles\022\030.obstacles.StringMessage\032\030.obst" +
-      "acles.StringMessage\"\000(\0010\001B#\n\tobstaclesB\024" +
-      "obstaclesServiceImplP\001b\006proto3"
+      "\n\017obstacles.proto\022\tobstacles\"\035\n\rStringMe" +
+      "ssage\022\014\n\004city\030\001 \001(\t2R\n\tobstacles\022E\n\tObst" +
+      "acles\022\030.obstacles.StringMessage\032\030.obstac" +
+      "les.StringMessage\"\000(\0010\001B#\n\tobstaclesB\024ob" +
+      "staclesServiceImplP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -51,7 +51,7 @@ public final class obstaclesServiceImpl {
     internal_static_obstacles_StringMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_obstacles_StringMessage_descriptor,
-        new java.lang.String[] { "Street", });
+        new java.lang.String[] { "City", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

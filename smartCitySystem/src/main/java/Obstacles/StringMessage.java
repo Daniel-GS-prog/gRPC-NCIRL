@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private StringMessage() {
-    street_ = "";
+    city_ = "";
   }
 
   @java.lang.Override
@@ -46,7 +46,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            street_ = s;
+            city_ = s;
             break;
           }
           default: {
@@ -81,34 +81,34 @@ private static final long serialVersionUID = 0L;
             obstacles.StringMessage.class, obstacles.StringMessage.Builder.class);
   }
 
-  public static final int STREET_FIELD_NUMBER = 1;
-  private volatile java.lang.Object street_;
+  public static final int CITY_FIELD_NUMBER = 1;
+  private volatile java.lang.Object city_;
   /**
-   * <code>string street = 1;</code>
+   * <code>string city = 1;</code>
    */
-  public java.lang.String getStreet() {
-    java.lang.Object ref = street_;
+  public java.lang.String getCity() {
+    java.lang.Object ref = city_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      street_ = s;
+      city_ = s;
       return s;
     }
   }
   /**
-   * <code>string street = 1;</code>
+   * <code>string city = 1;</code>
    */
   public com.google.protobuf.ByteString
-      getStreetBytes() {
-    java.lang.Object ref = street_;
+      getCityBytes() {
+    java.lang.Object ref = city_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      street_ = b;
+      city_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -129,8 +129,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getStreetBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, street_);
+    if (!getCityBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, city_);
     }
     unknownFields.writeTo(output);
   }
@@ -141,8 +141,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getStreetBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, street_);
+    if (!getCityBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, city_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -160,8 +160,8 @@ private static final long serialVersionUID = 0L;
     obstacles.StringMessage other = (obstacles.StringMessage) obj;
 
     boolean result = true;
-    result = result && getStreet()
-        .equals(other.getStreet());
+    result = result && getCity()
+        .equals(other.getCity());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -173,8 +173,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + STREET_FIELD_NUMBER;
-    hash = (53 * hash) + getStreet().hashCode();
+    hash = (37 * hash) + CITY_FIELD_NUMBER;
+    hash = (53 * hash) + getCity().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -308,7 +308,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      street_ = "";
+      city_ = "";
 
       return this;
     }
@@ -336,7 +336,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public obstacles.StringMessage buildPartial() {
       obstacles.StringMessage result = new obstacles.StringMessage(this);
-      result.street_ = street_;
+      result.city_ = city_;
       onBuilt();
       return result;
     }
@@ -385,8 +385,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(obstacles.StringMessage other) {
       if (other == obstacles.StringMessage.getDefaultInstance()) return this;
-      if (!other.getStreet().isEmpty()) {
-        street_ = other.street_;
+      if (!other.getCity().isEmpty()) {
+        city_ = other.city_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -418,71 +418,71 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object street_ = "";
+    private java.lang.Object city_ = "";
     /**
-     * <code>string street = 1;</code>
+     * <code>string city = 1;</code>
      */
-    public java.lang.String getStreet() {
-      java.lang.Object ref = street_;
+    public java.lang.String getCity() {
+      java.lang.Object ref = city_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        street_ = s;
+        city_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string street = 1;</code>
+     * <code>string city = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getStreetBytes() {
-      java.lang.Object ref = street_;
+        getCityBytes() {
+      java.lang.Object ref = city_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        street_ = b;
+        city_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string street = 1;</code>
+     * <code>string city = 1;</code>
      */
-    public Builder setStreet(
+    public Builder setCity(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      street_ = value;
+      city_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string street = 1;</code>
+     * <code>string city = 1;</code>
      */
-    public Builder clearStreet() {
+    public Builder clearCity() {
       
-      street_ = getDefaultInstance().getStreet();
+      city_ = getDefaultInstance().getCity();
       onChanged();
       return this;
     }
     /**
-     * <code>string street = 1;</code>
+     * <code>string city = 1;</code>
      */
-    public Builder setStreetBytes(
+    public Builder setCityBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      street_ = value;
+      city_ = value;
       onChanged();
       return this;
     }

@@ -111,7 +111,7 @@ public class currentTrafficServer {
 				public void onNext(StringMessage value) {
 					// TODO Auto-generated method stub
 					
-					// Returning message to client:
+					// Receiving message from client:
 					System.out.println("Server has received the message: " + value.getCity());
 					
 				}
@@ -141,7 +141,7 @@ public class currentTrafficServer {
 			
 		}
 		// --------------------------------------------------------------------------------------------
-		// --------------- Implementation of rpc TrafficInCity ----------------------------------------
+		// --------------- End of Implementation of rpc TrafficInCity ---------------------------------
 			
 	}
 	

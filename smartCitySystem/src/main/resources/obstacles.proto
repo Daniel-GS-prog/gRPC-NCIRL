@@ -19,5 +19,5 @@ service obstacles{
 
 message StringMessage{
 
-	string street = 1;
+	string city = 1;
 }
