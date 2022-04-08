@@ -1,4 +1,4 @@
-package Obstacles;
+package obstacles;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
@@ -19,39 +19,39 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.15.0)",
-    comments = "Source: ObstaclesService.proto")
-public final class ObstaclesGrpc {
+    comments = "Source: obstacles.proto")
+public final class obstaclesGrpc {
 
-  private ObstaclesGrpc() {}
+  private obstaclesGrpc() {}
 
-  public static final String SERVICE_NAME = "Obstacles.Obstacles";
+  public static final String SERVICE_NAME = "obstacles.obstacles";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<Obstacles.StringMessage,
-      Obstacles.StringMessage> getObstaclesMethod;
+  private static volatile io.grpc.MethodDescriptor<obstacles.StringMessage,
+      obstacles.StringMessage> getObstaclesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Obstacles",
-      requestType = Obstacles.StringMessage.class,
-      responseType = Obstacles.StringMessage.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-  public static io.grpc.MethodDescriptor<Obstacles.StringMessage,
-      Obstacles.StringMessage> getObstaclesMethod() {
-    io.grpc.MethodDescriptor<Obstacles.StringMessage, Obstacles.StringMessage> getObstaclesMethod;
-    if ((getObstaclesMethod = ObstaclesGrpc.getObstaclesMethod) == null) {
-      synchronized (ObstaclesGrpc.class) {
-        if ((getObstaclesMethod = ObstaclesGrpc.getObstaclesMethod) == null) {
-          ObstaclesGrpc.getObstaclesMethod = getObstaclesMethod = 
-              io.grpc.MethodDescriptor.<Obstacles.StringMessage, Obstacles.StringMessage>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+      requestType = obstacles.StringMessage.class,
+      responseType = obstacles.StringMessage.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<obstacles.StringMessage,
+      obstacles.StringMessage> getObstaclesMethod() {
+    io.grpc.MethodDescriptor<obstacles.StringMessage, obstacles.StringMessage> getObstaclesMethod;
+    if ((getObstaclesMethod = obstaclesGrpc.getObstaclesMethod) == null) {
+      synchronized (obstaclesGrpc.class) {
+        if ((getObstaclesMethod = obstaclesGrpc.getObstaclesMethod) == null) {
+          obstaclesGrpc.getObstaclesMethod = getObstaclesMethod = 
+              io.grpc.MethodDescriptor.<obstacles.StringMessage, obstacles.StringMessage>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
               .setFullMethodName(generateFullMethodName(
-                  "Obstacles.Obstacles", "Obstacles"))
+                  "obstacles.obstacles", "Obstacles"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  Obstacles.StringMessage.getDefaultInstance()))
+                  obstacles.StringMessage.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  Obstacles.StringMessage.getDefaultInstance()))
-                  .setSchemaDescriptor(new ObstaclesMethodDescriptorSupplier("Obstacles"))
+                  obstacles.StringMessage.getDefaultInstance()))
+                  .setSchemaDescriptor(new obstaclesMethodDescriptorSupplier("Obstacles"))
                   .build();
           }
         }
@@ -62,45 +62,45 @@ public final class ObstaclesGrpc {
   /**
    * Creates a new async stub that supports all call types for the service
    */
-  public static ObstaclesStub newStub(io.grpc.Channel channel) {
-    return new ObstaclesStub(channel);
+  public static obstaclesStub newStub(io.grpc.Channel channel) {
+    return new obstaclesStub(channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
-  public static ObstaclesBlockingStub newBlockingStub(
+  public static obstaclesBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new ObstaclesBlockingStub(channel);
+    return new obstaclesBlockingStub(channel);
   }
 
   /**
    * Creates a new ListenableFuture-style stub that supports unary calls on the service
    */
-  public static ObstaclesFutureStub newFutureStub(
+  public static obstaclesFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new ObstaclesFutureStub(channel);
+    return new obstaclesFutureStub(channel);
   }
 
   /**
    */
-  public static abstract class ObstaclesImplBase implements io.grpc.BindableService {
+  public static abstract class obstaclesImplBase implements io.grpc.BindableService {
 
     /**
      */
-    public void obstacles(Obstacles.StringMessage request,
-        io.grpc.stub.StreamObserver<Obstacles.StringMessage> responseObserver) {
-      asyncUnimplementedUnaryCall(getObstaclesMethod(), responseObserver);
+    public io.grpc.stub.StreamObserver<obstacles.StringMessage> obstacles(
+        io.grpc.stub.StreamObserver<obstacles.StringMessage> responseObserver) {
+      return asyncUnimplementedStreamingCall(getObstaclesMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getObstaclesMethod(),
-            asyncServerStreamingCall(
+            asyncBidiStreamingCall(
               new MethodHandlers<
-                Obstacles.StringMessage,
-                Obstacles.StringMessage>(
+                obstacles.StringMessage,
+                obstacles.StringMessage>(
                   this, METHODID_OBSTACLES)))
           .build();
     }
@@ -108,74 +108,66 @@ public final class ObstaclesGrpc {
 
   /**
    */
-  public static final class ObstaclesStub extends io.grpc.stub.AbstractStub<ObstaclesStub> {
-    private ObstaclesStub(io.grpc.Channel channel) {
+  public static final class obstaclesStub extends io.grpc.stub.AbstractStub<obstaclesStub> {
+    private obstaclesStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private ObstaclesStub(io.grpc.Channel channel,
+    private obstaclesStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected ObstaclesStub build(io.grpc.Channel channel,
+    protected obstaclesStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new ObstaclesStub(channel, callOptions);
+      return new obstaclesStub(channel, callOptions);
     }
 
     /**
      */
-    public void obstacles(Obstacles.StringMessage request,
-        io.grpc.stub.StreamObserver<Obstacles.StringMessage> responseObserver) {
-      asyncServerStreamingCall(
-          getChannel().newCall(getObstaclesMethod(), getCallOptions()), request, responseObserver);
+    public io.grpc.stub.StreamObserver<obstacles.StringMessage> obstacles(
+        io.grpc.stub.StreamObserver<obstacles.StringMessage> responseObserver) {
+      return asyncBidiStreamingCall(
+          getChannel().newCall(getObstaclesMethod(), getCallOptions()), responseObserver);
     }
   }
 
   /**
    */
-  public static final class ObstaclesBlockingStub extends io.grpc.stub.AbstractStub<ObstaclesBlockingStub> {
-    private ObstaclesBlockingStub(io.grpc.Channel channel) {
+  public static final class obstaclesBlockingStub extends io.grpc.stub.AbstractStub<obstaclesBlockingStub> {
+    private obstaclesBlockingStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private ObstaclesBlockingStub(io.grpc.Channel channel,
+    private obstaclesBlockingStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected ObstaclesBlockingStub build(io.grpc.Channel channel,
+    protected obstaclesBlockingStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new ObstaclesBlockingStub(channel, callOptions);
-    }
-
-    /**
-     */
-    public java.util.Iterator<Obstacles.StringMessage> obstacles(
-        Obstacles.StringMessage request) {
-      return blockingServerStreamingCall(
-          getChannel(), getObstaclesMethod(), getCallOptions(), request);
+      return new obstaclesBlockingStub(channel, callOptions);
     }
   }
 
   /**
    */
-  public static final class ObstaclesFutureStub extends io.grpc.stub.AbstractStub<ObstaclesFutureStub> {
-    private ObstaclesFutureStub(io.grpc.Channel channel) {
+  public static final class obstaclesFutureStub extends io.grpc.stub.AbstractStub<obstaclesFutureStub> {
+    private obstaclesFutureStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private ObstaclesFutureStub(io.grpc.Channel channel,
+    private obstaclesFutureStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected ObstaclesFutureStub build(io.grpc.Channel channel,
+    protected obstaclesFutureStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new ObstaclesFutureStub(channel, callOptions);
+      return new obstaclesFutureStub(channel, callOptions);
     }
   }
 
@@ -186,10 +178,10 @@ public final class ObstaclesGrpc {
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ObstaclesImplBase serviceImpl;
+    private final obstaclesImplBase serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ObstaclesImplBase serviceImpl, int methodId) {
+    MethodHandlers(obstaclesImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -198,10 +190,6 @@ public final class ObstaclesGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_OBSTACLES:
-          serviceImpl.obstacles((Obstacles.StringMessage) request,
-              (io.grpc.stub.StreamObserver<Obstacles.StringMessage>) responseObserver);
-          break;
         default:
           throw new AssertionError();
       }
@@ -212,38 +200,41 @@ public final class ObstaclesGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_OBSTACLES:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.obstacles(
+              (io.grpc.stub.StreamObserver<obstacles.StringMessage>) responseObserver);
         default:
           throw new AssertionError();
       }
     }
   }
 
-  private static abstract class ObstaclesBaseDescriptorSupplier
+  private static abstract class obstaclesBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
-    ObstaclesBaseDescriptorSupplier() {}
+    obstaclesBaseDescriptorSupplier() {}
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return Obstacles.ObstaclesServiceImpl.getDescriptor();
+      return obstacles.obstaclesServiceImpl.getDescriptor();
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
-      return getFileDescriptor().findServiceByName("Obstacles");
+      return getFileDescriptor().findServiceByName("obstacles");
     }
   }
 
-  private static final class ObstaclesFileDescriptorSupplier
-      extends ObstaclesBaseDescriptorSupplier {
-    ObstaclesFileDescriptorSupplier() {}
+  private static final class obstaclesFileDescriptorSupplier
+      extends obstaclesBaseDescriptorSupplier {
+    obstaclesFileDescriptorSupplier() {}
   }
 
-  private static final class ObstaclesMethodDescriptorSupplier
-      extends ObstaclesBaseDescriptorSupplier
+  private static final class obstaclesMethodDescriptorSupplier
+      extends obstaclesBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
     private final String methodName;
 
-    ObstaclesMethodDescriptorSupplier(String methodName) {
+    obstaclesMethodDescriptorSupplier(String methodName) {
       this.methodName = methodName;
     }
 
@@ -258,11 +249,11 @@ public final class ObstaclesGrpc {
   public static io.grpc.ServiceDescriptor getServiceDescriptor() {
     io.grpc.ServiceDescriptor result = serviceDescriptor;
     if (result == null) {
-      synchronized (ObstaclesGrpc.class) {
+      synchronized (obstaclesGrpc.class) {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new ObstaclesFileDescriptorSupplier())
+              .setSchemaDescriptor(new obstaclesFileDescriptorSupplier())
               .addMethod(getObstaclesMethod())
               .build();
         }
