@@ -59,28 +59,28 @@ public final class currentTrafficGrpc {
      return getCurrentTrafficMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<currentTraffic.DatesTraffic,
+  private static volatile io.grpc.MethodDescriptor<currentTraffic.StringMessage,
       currentTraffic.StringMessage> getTrafficInCityMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "TrafficInCity",
-      requestType = currentTraffic.DatesTraffic.class,
+      requestType = currentTraffic.StringMessage.class,
       responseType = currentTraffic.StringMessage.class,
       methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-  public static io.grpc.MethodDescriptor<currentTraffic.DatesTraffic,
+  public static io.grpc.MethodDescriptor<currentTraffic.StringMessage,
       currentTraffic.StringMessage> getTrafficInCityMethod() {
-    io.grpc.MethodDescriptor<currentTraffic.DatesTraffic, currentTraffic.StringMessage> getTrafficInCityMethod;
+    io.grpc.MethodDescriptor<currentTraffic.StringMessage, currentTraffic.StringMessage> getTrafficInCityMethod;
     if ((getTrafficInCityMethod = currentTrafficGrpc.getTrafficInCityMethod) == null) {
       synchronized (currentTrafficGrpc.class) {
         if ((getTrafficInCityMethod = currentTrafficGrpc.getTrafficInCityMethod) == null) {
           currentTrafficGrpc.getTrafficInCityMethod = getTrafficInCityMethod = 
-              io.grpc.MethodDescriptor.<currentTraffic.DatesTraffic, currentTraffic.StringMessage>newBuilder()
+              io.grpc.MethodDescriptor.<currentTraffic.StringMessage, currentTraffic.StringMessage>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
               .setFullMethodName(generateFullMethodName(
                   "currentTraffic.currentTraffic", "TrafficInCity"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  currentTraffic.DatesTraffic.getDefaultInstance()))
+                  currentTraffic.StringMessage.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   currentTraffic.StringMessage.getDefaultInstance()))
                   .setSchemaDescriptor(new currentTrafficMethodDescriptorSupplier("TrafficInCity"))
@@ -127,7 +127,7 @@ public final class currentTrafficGrpc {
 
     /**
      */
-    public io.grpc.stub.StreamObserver<currentTraffic.DatesTraffic> trafficInCity(
+    public io.grpc.stub.StreamObserver<currentTraffic.StringMessage> trafficInCity(
         io.grpc.stub.StreamObserver<currentTraffic.StringMessage> responseObserver) {
       return asyncUnimplementedStreamingCall(getTrafficInCityMethod(), responseObserver);
     }
@@ -145,7 +145,7 @@ public final class currentTrafficGrpc {
             getTrafficInCityMethod(),
             asyncClientStreamingCall(
               new MethodHandlers<
-                currentTraffic.DatesTraffic,
+                currentTraffic.StringMessage,
                 currentTraffic.StringMessage>(
                   this, METHODID_TRAFFIC_IN_CITY)))
           .build();
@@ -180,7 +180,7 @@ public final class currentTrafficGrpc {
 
     /**
      */
-    public io.grpc.stub.StreamObserver<currentTraffic.DatesTraffic> trafficInCity(
+    public io.grpc.stub.StreamObserver<currentTraffic.StringMessage> trafficInCity(
         io.grpc.stub.StreamObserver<currentTraffic.StringMessage> responseObserver) {
       return asyncClientStreamingCall(
           getChannel().newCall(getTrafficInCityMethod(), getCallOptions()), responseObserver);

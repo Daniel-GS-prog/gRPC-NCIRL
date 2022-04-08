@@ -97,18 +97,23 @@ public class currentTrafficServer {
 		// --------------------------------------------------------------------------------------------
 		// --------------- Implementation of rpc TrafficInCity ----------------------------------------
 		
-		public StreamObserver<DatesTraffic> TrafficInCity(StreamObserver<StringMessage> responseObserver){
+		
+		public StreamObserver <StringMessage> trafficInCity(StreamObserver<StringMessage> responseObserver){
 			
-			return new StreamObserver<DatesTraffic>() {
+			//Checking we are in client streaming service:
+			System.out.println("Server: inside the client streaming method ");
+			
+			return new StreamObserver<StringMessage>() {
 				
-				ArrayList<Float> dates = new ArrayList<Float>();
-
+				
 				@Override
-				public void onNext(DatesTraffic value) {
+				//Verify message from client:
+				public void onNext(StringMessage value) {
 					// TODO Auto-generated method stub
-					float incoming = value.getDate();
 					
-					dates.add(incoming);
+					// Returning message to client:
+					System.out.println("Server has received the message: " + value.getCity());
+					
 				}
 
 				@Override
@@ -121,32 +126,23 @@ public class currentTrafficServer {
 				public void onCompleted() {
 					// TODO Auto-generated method stub
 					
-					int i, x;
+					StringMessage.Builder responseBuilder = StringMessage.newBuilder();
 					
-					for (i = 0; 0 < dates.size(); i++) {
-						
-						StringMessage reply = StringMessage.newBuilder().build();
-						
-						responseObserver.onNext(reply);
-
-						responseObserver.onCompleted();
-						
-						
-					}
+					//Building message to client:
+					responseBuilder.setCity("For the selected streets the traffic is excellent." );
 					
-					
-					
-					
-					
-					
+					//Sending message to client with responseObserver:
+					responseObserver.onNext(responseBuilder.build());
+					responseObserver.onCompleted();
 					
 				}
-				
-				
+			
 			};
 			
 		}
+		// --------------------------------------------------------------------------------------------
+		// --------------- Implementation of rpc TrafficInCity ----------------------------------------
 			
-		
 	}
+	
 }
