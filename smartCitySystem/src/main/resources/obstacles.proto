@@ -14,10 +14,10 @@ service obstacles{
 	 // and returns a messages stating whether the points are clear
 	 // of obstacles
 
-	rpc Obstacles (stream StringMessage) returns (stream StringMessage){}
+	rpc ObstaclesInRoad (stream Message) returns (stream Message){}
 }
 
-message StringMessage{
+message Message{
 
-	string city = 1;
+	string streets = 1;
 }

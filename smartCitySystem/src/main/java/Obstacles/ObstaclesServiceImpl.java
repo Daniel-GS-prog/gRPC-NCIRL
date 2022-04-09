@@ -15,10 +15,10 @@ public final class obstaclesServiceImpl {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_obstacles_StringMessage_descriptor;
+    internal_static_obstacles_Message_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_obstacles_StringMessage_fieldAccessorTable;
+      internal_static_obstacles_Message_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -28,11 +28,11 @@ public final class obstaclesServiceImpl {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017obstacles.proto\022\tobstacles\"\035\n\rStringMe" +
-      "ssage\022\014\n\004city\030\001 \001(\t2R\n\tobstacles\022E\n\tObst" +
-      "acles\022\030.obstacles.StringMessage\032\030.obstac" +
-      "les.StringMessage\"\000(\0010\001B#\n\tobstaclesB\024ob" +
-      "staclesServiceImplP\001b\006proto3"
+      "\n\017obstacles.proto\022\tobstacles\"\032\n\007Message\022" +
+      "\017\n\007streets\030\001 \001(\t2L\n\tobstacles\022?\n\017Obstacl" +
+      "esInRoad\022\022.obstacles.Message\032\022.obstacles" +
+      ".Message\"\000(\0010\001B#\n\tobstaclesB\024obstaclesSe" +
+      "rviceImplP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -46,12 +46,12 @@ public final class obstaclesServiceImpl {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_obstacles_StringMessage_descriptor =
+    internal_static_obstacles_Message_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_obstacles_StringMessage_fieldAccessorTable = new
+    internal_static_obstacles_Message_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_obstacles_StringMessage_descriptor,
-        new java.lang.String[] { "City", });
+        internal_static_obstacles_Message_descriptor,
+        new java.lang.String[] { "Streets", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

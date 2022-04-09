@@ -27,36 +27,36 @@ public final class obstaclesGrpc {
   public static final String SERVICE_NAME = "obstacles.obstacles";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<obstacles.StringMessage,
-      obstacles.StringMessage> getObstaclesMethod;
+  private static volatile io.grpc.MethodDescriptor<obstacles.Message,
+      obstacles.Message> getObstaclesInRoadMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "Obstacles",
-      requestType = obstacles.StringMessage.class,
-      responseType = obstacles.StringMessage.class,
+      fullMethodName = SERVICE_NAME + '/' + "ObstaclesInRoad",
+      requestType = obstacles.Message.class,
+      responseType = obstacles.Message.class,
       methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
-  public static io.grpc.MethodDescriptor<obstacles.StringMessage,
-      obstacles.StringMessage> getObstaclesMethod() {
-    io.grpc.MethodDescriptor<obstacles.StringMessage, obstacles.StringMessage> getObstaclesMethod;
-    if ((getObstaclesMethod = obstaclesGrpc.getObstaclesMethod) == null) {
+  public static io.grpc.MethodDescriptor<obstacles.Message,
+      obstacles.Message> getObstaclesInRoadMethod() {
+    io.grpc.MethodDescriptor<obstacles.Message, obstacles.Message> getObstaclesInRoadMethod;
+    if ((getObstaclesInRoadMethod = obstaclesGrpc.getObstaclesInRoadMethod) == null) {
       synchronized (obstaclesGrpc.class) {
-        if ((getObstaclesMethod = obstaclesGrpc.getObstaclesMethod) == null) {
-          obstaclesGrpc.getObstaclesMethod = getObstaclesMethod = 
-              io.grpc.MethodDescriptor.<obstacles.StringMessage, obstacles.StringMessage>newBuilder()
+        if ((getObstaclesInRoadMethod = obstaclesGrpc.getObstaclesInRoadMethod) == null) {
+          obstaclesGrpc.getObstaclesInRoadMethod = getObstaclesInRoadMethod = 
+              io.grpc.MethodDescriptor.<obstacles.Message, obstacles.Message>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
               .setFullMethodName(generateFullMethodName(
-                  "obstacles.obstacles", "Obstacles"))
+                  "obstacles.obstacles", "ObstaclesInRoad"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  obstacles.StringMessage.getDefaultInstance()))
+                  obstacles.Message.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  obstacles.StringMessage.getDefaultInstance()))
-                  .setSchemaDescriptor(new obstaclesMethodDescriptorSupplier("Obstacles"))
+                  obstacles.Message.getDefaultInstance()))
+                  .setSchemaDescriptor(new obstaclesMethodDescriptorSupplier("ObstaclesInRoad"))
                   .build();
           }
         }
      }
-     return getObstaclesMethod;
+     return getObstaclesInRoadMethod;
   }
 
   /**
@@ -88,20 +88,20 @@ public final class obstaclesGrpc {
 
     /**
      */
-    public io.grpc.stub.StreamObserver<obstacles.StringMessage> obstacles(
-        io.grpc.stub.StreamObserver<obstacles.StringMessage> responseObserver) {
-      return asyncUnimplementedStreamingCall(getObstaclesMethod(), responseObserver);
+    public io.grpc.stub.StreamObserver<obstacles.Message> obstaclesInRoad(
+        io.grpc.stub.StreamObserver<obstacles.Message> responseObserver) {
+      return asyncUnimplementedStreamingCall(getObstaclesInRoadMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            getObstaclesMethod(),
+            getObstaclesInRoadMethod(),
             asyncBidiStreamingCall(
               new MethodHandlers<
-                obstacles.StringMessage,
-                obstacles.StringMessage>(
-                  this, METHODID_OBSTACLES)))
+                obstacles.Message,
+                obstacles.Message>(
+                  this, METHODID_OBSTACLES_IN_ROAD)))
           .build();
     }
   }
@@ -126,10 +126,10 @@ public final class obstaclesGrpc {
 
     /**
      */
-    public io.grpc.stub.StreamObserver<obstacles.StringMessage> obstacles(
-        io.grpc.stub.StreamObserver<obstacles.StringMessage> responseObserver) {
+    public io.grpc.stub.StreamObserver<obstacles.Message> obstaclesInRoad(
+        io.grpc.stub.StreamObserver<obstacles.Message> responseObserver) {
       return asyncBidiStreamingCall(
-          getChannel().newCall(getObstaclesMethod(), getCallOptions()), responseObserver);
+          getChannel().newCall(getObstaclesInRoadMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -171,7 +171,7 @@ public final class obstaclesGrpc {
     }
   }
 
-  private static final int METHODID_OBSTACLES = 0;
+  private static final int METHODID_OBSTACLES_IN_ROAD = 0;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -200,9 +200,9 @@ public final class obstaclesGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_OBSTACLES:
-          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.obstacles(
-              (io.grpc.stub.StreamObserver<obstacles.StringMessage>) responseObserver);
+        case METHODID_OBSTACLES_IN_ROAD:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.obstaclesInRoad(
+              (io.grpc.stub.StreamObserver<obstacles.Message>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -254,7 +254,7 @@ public final class obstaclesGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new obstaclesFileDescriptorSupplier())
-              .addMethod(getObstaclesMethod())
+              .addMethod(getObstaclesInRoadMethod())
               .build();
         }
       }

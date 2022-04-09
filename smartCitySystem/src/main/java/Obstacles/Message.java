@@ -4,19 +4,19 @@
 package obstacles;
 
 /**
- * Protobuf type {@code obstacles.StringMessage}
+ * Protobuf type {@code obstacles.Message}
  */
-public  final class StringMessage extends
+public  final class Message extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:obstacles.StringMessage)
-    StringMessageOrBuilder {
+    // @@protoc_insertion_point(message_implements:obstacles.Message)
+    MessageOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use StringMessage.newBuilder() to construct.
-  private StringMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use Message.newBuilder() to construct.
+  private Message(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private StringMessage() {
-    city_ = "";
+  private Message() {
+    streets_ = "";
   }
 
   @java.lang.Override
@@ -24,7 +24,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private StringMessage(
+  private Message(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -46,7 +46,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            city_ = s;
+            streets_ = s;
             break;
           }
           default: {
@@ -70,45 +70,45 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return obstacles.obstaclesServiceImpl.internal_static_obstacles_StringMessage_descriptor;
+    return obstacles.obstaclesServiceImpl.internal_static_obstacles_Message_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return obstacles.obstaclesServiceImpl.internal_static_obstacles_StringMessage_fieldAccessorTable
+    return obstacles.obstaclesServiceImpl.internal_static_obstacles_Message_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            obstacles.StringMessage.class, obstacles.StringMessage.Builder.class);
+            obstacles.Message.class, obstacles.Message.Builder.class);
   }
 
-  public static final int CITY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object city_;
+  public static final int STREETS_FIELD_NUMBER = 1;
+  private volatile java.lang.Object streets_;
   /**
-   * <code>string city = 1;</code>
+   * <code>string streets = 1;</code>
    */
-  public java.lang.String getCity() {
-    java.lang.Object ref = city_;
+  public java.lang.String getStreets() {
+    java.lang.Object ref = streets_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      city_ = s;
+      streets_ = s;
       return s;
     }
   }
   /**
-   * <code>string city = 1;</code>
+   * <code>string streets = 1;</code>
    */
   public com.google.protobuf.ByteString
-      getCityBytes() {
-    java.lang.Object ref = city_;
+      getStreetsBytes() {
+    java.lang.Object ref = streets_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      city_ = b;
+      streets_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -129,8 +129,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getCityBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, city_);
+    if (!getStreetsBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, streets_);
     }
     unknownFields.writeTo(output);
   }
@@ -141,8 +141,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getCityBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, city_);
+    if (!getStreetsBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, streets_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -154,14 +154,14 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof obstacles.StringMessage)) {
+    if (!(obj instanceof obstacles.Message)) {
       return super.equals(obj);
     }
-    obstacles.StringMessage other = (obstacles.StringMessage) obj;
+    obstacles.Message other = (obstacles.Message) obj;
 
     boolean result = true;
-    result = result && getCity()
-        .equals(other.getCity());
+    result = result && getStreets()
+        .equals(other.getStreets());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -173,76 +173,76 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CITY_FIELD_NUMBER;
-    hash = (53 * hash) + getCity().hashCode();
+    hash = (37 * hash) + STREETS_FIELD_NUMBER;
+    hash = (53 * hash) + getStreets().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static obstacles.StringMessage parseFrom(
+  public static obstacles.Message parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static obstacles.StringMessage parseFrom(
+  public static obstacles.Message parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static obstacles.StringMessage parseFrom(
+  public static obstacles.Message parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static obstacles.StringMessage parseFrom(
+  public static obstacles.Message parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static obstacles.StringMessage parseFrom(byte[] data)
+  public static obstacles.Message parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static obstacles.StringMessage parseFrom(
+  public static obstacles.Message parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static obstacles.StringMessage parseFrom(java.io.InputStream input)
+  public static obstacles.Message parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static obstacles.StringMessage parseFrom(
+  public static obstacles.Message parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static obstacles.StringMessage parseDelimitedFrom(java.io.InputStream input)
+  public static obstacles.Message parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static obstacles.StringMessage parseDelimitedFrom(
+  public static obstacles.Message parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static obstacles.StringMessage parseFrom(
+  public static obstacles.Message parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static obstacles.StringMessage parseFrom(
+  public static obstacles.Message parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -255,7 +255,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(obstacles.StringMessage prototype) {
+  public static Builder newBuilder(obstacles.Message prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -271,26 +271,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code obstacles.StringMessage}
+   * Protobuf type {@code obstacles.Message}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:obstacles.StringMessage)
-      obstacles.StringMessageOrBuilder {
+      // @@protoc_insertion_point(builder_implements:obstacles.Message)
+      obstacles.MessageOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return obstacles.obstaclesServiceImpl.internal_static_obstacles_StringMessage_descriptor;
+      return obstacles.obstaclesServiceImpl.internal_static_obstacles_Message_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return obstacles.obstaclesServiceImpl.internal_static_obstacles_StringMessage_fieldAccessorTable
+      return obstacles.obstaclesServiceImpl.internal_static_obstacles_Message_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              obstacles.StringMessage.class, obstacles.StringMessage.Builder.class);
+              obstacles.Message.class, obstacles.Message.Builder.class);
     }
 
-    // Construct using obstacles.StringMessage.newBuilder()
+    // Construct using obstacles.Message.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -308,7 +308,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      city_ = "";
+      streets_ = "";
 
       return this;
     }
@@ -316,17 +316,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return obstacles.obstaclesServiceImpl.internal_static_obstacles_StringMessage_descriptor;
+      return obstacles.obstaclesServiceImpl.internal_static_obstacles_Message_descriptor;
     }
 
     @java.lang.Override
-    public obstacles.StringMessage getDefaultInstanceForType() {
-      return obstacles.StringMessage.getDefaultInstance();
+    public obstacles.Message getDefaultInstanceForType() {
+      return obstacles.Message.getDefaultInstance();
     }
 
     @java.lang.Override
-    public obstacles.StringMessage build() {
-      obstacles.StringMessage result = buildPartial();
+    public obstacles.Message build() {
+      obstacles.Message result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -334,9 +334,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public obstacles.StringMessage buildPartial() {
-      obstacles.StringMessage result = new obstacles.StringMessage(this);
-      result.city_ = city_;
+    public obstacles.Message buildPartial() {
+      obstacles.Message result = new obstacles.Message(this);
+      result.streets_ = streets_;
       onBuilt();
       return result;
     }
@@ -375,18 +375,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof obstacles.StringMessage) {
-        return mergeFrom((obstacles.StringMessage)other);
+      if (other instanceof obstacles.Message) {
+        return mergeFrom((obstacles.Message)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(obstacles.StringMessage other) {
-      if (other == obstacles.StringMessage.getDefaultInstance()) return this;
-      if (!other.getCity().isEmpty()) {
-        city_ = other.city_;
+    public Builder mergeFrom(obstacles.Message other) {
+      if (other == obstacles.Message.getDefaultInstance()) return this;
+      if (!other.getStreets().isEmpty()) {
+        streets_ = other.streets_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -404,11 +404,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      obstacles.StringMessage parsedMessage = null;
+      obstacles.Message parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (obstacles.StringMessage) e.getUnfinishedMessage();
+        parsedMessage = (obstacles.Message) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -418,71 +418,71 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object city_ = "";
+    private java.lang.Object streets_ = "";
     /**
-     * <code>string city = 1;</code>
+     * <code>string streets = 1;</code>
      */
-    public java.lang.String getCity() {
-      java.lang.Object ref = city_;
+    public java.lang.String getStreets() {
+      java.lang.Object ref = streets_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        city_ = s;
+        streets_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string city = 1;</code>
+     * <code>string streets = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getCityBytes() {
-      java.lang.Object ref = city_;
+        getStreetsBytes() {
+      java.lang.Object ref = streets_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        city_ = b;
+        streets_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string city = 1;</code>
+     * <code>string streets = 1;</code>
      */
-    public Builder setCity(
+    public Builder setStreets(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      city_ = value;
+      streets_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string city = 1;</code>
+     * <code>string streets = 1;</code>
      */
-    public Builder clearCity() {
+    public Builder clearStreets() {
       
-      city_ = getDefaultInstance().getCity();
+      streets_ = getDefaultInstance().getStreets();
       onChanged();
       return this;
     }
     /**
-     * <code>string city = 1;</code>
+     * <code>string streets = 1;</code>
      */
-    public Builder setCityBytes(
+    public Builder setStreetsBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      city_ = value;
+      streets_ = value;
       onChanged();
       return this;
     }
@@ -499,41 +499,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:obstacles.StringMessage)
+    // @@protoc_insertion_point(builder_scope:obstacles.Message)
   }
 
-  // @@protoc_insertion_point(class_scope:obstacles.StringMessage)
-  private static final obstacles.StringMessage DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:obstacles.Message)
+  private static final obstacles.Message DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new obstacles.StringMessage();
+    DEFAULT_INSTANCE = new obstacles.Message();
   }
 
-  public static obstacles.StringMessage getDefaultInstance() {
+  public static obstacles.Message getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<StringMessage>
-      PARSER = new com.google.protobuf.AbstractParser<StringMessage>() {
+  private static final com.google.protobuf.Parser<Message>
+      PARSER = new com.google.protobuf.AbstractParser<Message>() {
     @java.lang.Override
-    public StringMessage parsePartialFrom(
+    public Message parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new StringMessage(input, extensionRegistry);
+      return new Message(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<StringMessage> parser() {
+  public static com.google.protobuf.Parser<Message> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<StringMessage> getParserForType() {
+  public com.google.protobuf.Parser<Message> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public obstacles.StringMessage getDefaultInstanceForType() {
+  public obstacles.Message getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
