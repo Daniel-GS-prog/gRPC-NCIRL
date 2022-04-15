@@ -1,8 +1,10 @@
 currentTraffic/StringMessageOrBuilder.class
 cityInService/cityInServiceClient.class
+obstacles/obstaclesServer.class
 currentTraffic/currentTrafficGrpc.class
 cityInService/IntMessage$1.class
 obstacles/obstaclesGrpc$obstaclesImplBase.class
+obstacles/obstaclesClient$1.class
 cityInService/StringMessageOrBuilder.class
 obstacles/obstaclesGrpc$MethodHandlers.class
 currentTraffic/currentTrafficServiceImpl$1.class
@@ -19,13 +21,16 @@ currentTraffic/currentTrafficGrpc$currentTrafficBaseDescriptorSupplier.class
 obstacles/obstaclesGrpc$obstaclesFileDescriptorSupplier.class
 currentTraffic/StringMessage$1.class
 currentTraffic/currentTrafficGrpc$currentTrafficFileDescriptorSupplier.class
+obstacles/obstaclesServer$obstaclesImpl.class
 obstacles/obstaclesServiceImpl.class
 cityInService/cityInServiceGrpc$cityInServiceImplBase.class
 cityInService/cityInServiceServer$cityInServiceImpl.class
 cityInService/StringMessage$1.class
+obstacles/obstaclesServer$obstaclesImpl$1.class
 cityInService/IntMessageOrBuilder.class
 cityInService/cityInServiceGrpc$cityInServiceBlockingStub.class
 currentTraffic/currentTrafficGrpc$currentTrafficBlockingStub.class
+obstacles/obstaclesClient.class
 currentTraffic/currentTrafficServer$currentTrafficImpl$1.class
 obstacles/obstaclesGrpc$obstaclesBaseDescriptorSupplier.class
 cityInService/cityInServiceGrpc$cityInServiceFutureStub.class

@@ -5,6 +5,7 @@
 /Users/ErDenien/Desktop/NCIRL/SECOND SEMESTER/DISTRIBUTED SYSTEMS/My - CA/gRPC-NCIRL/smartCitySystem/src/main/java/cityInService/cityInServiceGrpc.java
 /Users/ErDenien/Desktop/NCIRL/SECOND SEMESTER/DISTRIBUTED SYSTEMS/My - CA/gRPC-NCIRL/smartCitySystem/src/main/java/obstacles/obstaclesServiceImpl.java
 /Users/ErDenien/Desktop/NCIRL/SECOND SEMESTER/DISTRIBUTED SYSTEMS/My - CA/gRPC-NCIRL/smartCitySystem/src/main/java/cityInService/StringMessage.java
+/Users/ErDenien/Desktop/NCIRL/SECOND SEMESTER/DISTRIBUTED SYSTEMS/My - CA/gRPC-NCIRL/smartCitySystem/src/main/java/obstacles/obstaclesServer.java
 /Users/ErDenien/Desktop/NCIRL/SECOND SEMESTER/DISTRIBUTED SYSTEMS/My - CA/gRPC-NCIRL/smartCitySystem/src/main/java/currentTraffic/StringMessage.java
 /Users/ErDenien/Desktop/NCIRL/SECOND SEMESTER/DISTRIBUTED SYSTEMS/My - CA/gRPC-NCIRL/smartCitySystem/src/main/java/cityInService/IntMessageOrBuilder.java
 /Users/ErDenien/Desktop/NCIRL/SECOND SEMESTER/DISTRIBUTED SYSTEMS/My - CA/gRPC-NCIRL/smartCitySystem/src/main/java/obstacles/Message.java
@@ -15,4 +16,5 @@
 /Users/ErDenien/Desktop/NCIRL/SECOND SEMESTER/DISTRIBUTED SYSTEMS/My - CA/gRPC-NCIRL/smartCitySystem/src/main/java/currentTraffic/currentTrafficServer.java
 /Users/ErDenien/Desktop/NCIRL/SECOND SEMESTER/DISTRIBUTED SYSTEMS/My - CA/gRPC-NCIRL/smartCitySystem/src/main/java/cityInService/StringMessageOrBuilder.java
 /Users/ErDenien/Desktop/NCIRL/SECOND SEMESTER/DISTRIBUTED SYSTEMS/My - CA/gRPC-NCIRL/smartCitySystem/src/main/java/obstacles/obstaclesGrpc.java
+/Users/ErDenien/Desktop/NCIRL/SECOND SEMESTER/DISTRIBUTED SYSTEMS/My - CA/gRPC-NCIRL/smartCitySystem/src/main/java/obstacles/obstaclesClient.java
 /Users/ErDenien/Desktop/NCIRL/SECOND SEMESTER/DISTRIBUTED SYSTEMS/My - CA/gRPC-NCIRL/smartCitySystem/src/main/java/cityInService/cityInServiceClient.java
