@@ -33,7 +33,7 @@ public class cityInServiceServer {
 		//jmDNS -
 		ourServer.registerService();
 		
-			ourServer.start();
+		ourServer.start();
 		
 	}
 	

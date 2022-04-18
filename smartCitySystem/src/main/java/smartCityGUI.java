@@ -11,10 +11,11 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import cityInService.IntMessage;
 import cityInService.StringMessage;
 import cityInService.cityInServiceGrpc;
 import cityInService.cityInServiceGrpc.cityInServiceBlockingStub;
-import currentTraffic.currentTrafficGrpc.currentTrafficBlockingStub;
+
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
@@ -26,23 +27,27 @@ public class smartCityGUI {
 	
 	private JFrame frame;
 	private JTextArea textResponse ;
-	
+	private JTextArea txtResponse;
 	
 	// Launching application: 
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
-			//overide the run method of runnable
+			
+			//Override the run method of runnable
 			public void run() {
+				
 				try {
 					smartCityGUI window = new smartCityGUI();
 					window.frame.setVisible(true);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
 	}
+	
 	
 	// Create application:
 	public smartCityGUI() {
@@ -61,13 +66,14 @@ public class smartCityGUI {
 	}
 	
 	
+	
 	private void initialize() {
 		
 		frame = new JFrame();
 		frame.setTitle("Smart city gRPC");
 		
 		// Dimensions:
-		frame.setBounds(100, 100, 1000, 300);
+		frame.setBounds(100, 100, 1100, 300);
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -76,17 +82,18 @@ public class smartCityGUI {
 		frame.getContentPane().setLayout(bl);
 		
 		
+		
 		// ----------- Implementation of first service "City in Service" ------------------ //
 		
 		// Create JPanel:
 		JPanel panel_cityInService = new JPanel();
 		frame.getContentPane().add(panel_cityInService);
 		
-		panel_cityInService.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		panel_cityInService.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
 		
 		
 		// New Label for panel_cityInService:
-		JLabel cityInServiceLabel = new JLabel("City In Service ");
+		JLabel cityInServiceLabel = new JLabel("Check if a city is in the service ");
 		
 		panel_cityInService.add(cityInServiceLabel);
 		
@@ -98,7 +105,7 @@ public class smartCityGUI {
 		textCity.setColumns(10);
 		
 		// Button to send request:
-		JButton submit = new JButton("Submit");
+		JButton submit = new JButton("Check city");
 		
 		// Listening for Input:
 		submit.addActionListener(new ActionListener() {
@@ -114,9 +121,7 @@ public class smartCityGUI {
 				// Getting message back from the server:
 				StringMessage response = cityInServicebStub.cityInService(cString);
 				
-				// Printing response:
-				//System.out.println(response.getCity());
-				
+			
 				//Populate JTextArea:
 				textResponse.append(response.getCity());
 				
@@ -130,12 +135,74 @@ public class smartCityGUI {
 		textResponse .setLineWrap(true);
 		textResponse.setWrapStyleWord(true);
 		
-		JScrollPane scrollPane = new JScrollPane(textResponse);
+		JScrollPane scrollPaneCity = new JScrollPane(textResponse);
 		
 		//textResponse.setSize(new Dimension(15, 30));
-		panel_cityInService.add(scrollPane);
+		panel_cityInService.add(scrollPaneCity);
+		
 		
 		// ----------- End Implementation of first service "City in Service" ------------------ //
+		
+		
+		
+		// ----------- Implementation of rpc TemperatureInCity ------------------ //
+		
+		// Create JPanel:
+		
+		JPanel panel_temperatureInCity = new JPanel();
+		frame.getContentPane().add(panel_temperatureInCity);
+		panel_temperatureInCity.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
+		
+		// New Label for panel_cityInService:
+		JLabel temperatureInCityLabel = new JLabel("Check the temperature in a city: ");
+		
+		panel_temperatureInCity.add(temperatureInCityLabel);
+		
+		// Input text Box:
+		JTextField txtCity = new JTextField();
+		panel_temperatureInCity.add(txtCity);
+		txtCity.setColumns(10);
+		
+		// Button to send request:
+		JButton temperatureButton = new JButton("Check temperature");
+		
+		
+		// Listening for Input:
+		temperatureButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+				String city = txtCity.getText();
+				
+				StringMessage cString = StringMessage.newBuilder().setCity(city).build();
+				
+				// Getting message back from the server:
+				IntMessage response = cityInServicebStub.temperatureInCity(cString);
+				
+				String str1 = String.valueOf(response.getTemperature());
+				
+				txtResponse.append("The temperature in " + city + " is: " + str1 + " degrees celsius.");
+				
+				
+			}
+				
+		});
+		
+		panel_temperatureInCity.add(temperatureButton);
+		
+		txtResponse = new JTextArea(2, 45);
+		txtResponse .setLineWrap(true);
+		txtResponse.setWrapStyleWord(true);
+		
+		JScrollPane scrollPaneTemperature = new JScrollPane(txtResponse);
+		
+		//textResponse.setSize(new Dimension(15, 30));
+		panel_temperatureInCity.add(scrollPaneTemperature);
+		
+		
+		// ----------- End of Implementation of rpc TemperatureInCity ------------------ //
 		
 		
 		
