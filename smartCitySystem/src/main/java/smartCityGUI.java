@@ -10,12 +10,14 @@ import javax.swing.JTextField;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Iterator;
 
 import cityInService.IntMessage;
 import cityInService.StringMessage;
 import cityInService.cityInServiceGrpc;
 import cityInService.cityInServiceGrpc.cityInServiceBlockingStub;
-
+import currentTraffic.currentTrafficGrpc;
+import currentTraffic.currentTrafficGrpc.currentTrafficBlockingStub;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
@@ -24,10 +26,12 @@ import java.awt.EventQueue;
 public class smartCityGUI {
 	
 	private static cityInServiceBlockingStub cityInServicebStub;
+	private static currentTrafficBlockingStub currentTrafficbStub;
 	
 	private JFrame frame;
 	private JTextArea textResponse ;
 	private JTextArea txtResponse;
+	private JTextArea currentTrafficResponse;
 	
 	// Launching application: 
 	
@@ -58,8 +62,9 @@ public class smartCityGUI {
 	// Creating Channel:
 	ManagedChannel newChannel = ManagedChannelBuilder.forAddress(host, port).usePlaintext().build();
 	
-	// Create a stub, pass the channel to the stub
+	// Create all stubs needed, pass the channel to the stub
 	 cityInServicebStub = cityInServiceGrpc.newBlockingStub(newChannel);
+	 currentTrafficbStub = currentTrafficGrpc.newBlockingStub(newChannel);
 	
 	initialize();
 	
@@ -83,7 +88,7 @@ public class smartCityGUI {
 		
 		
 		
-		// ----------- Implementation of first service "City in Service" ------------------ //
+		// ----------- Implementation of rpc "City in Service" ------------------ //
 		
 		// Create JPanel:
 		JPanel panel_cityInService = new JPanel();
@@ -141,7 +146,7 @@ public class smartCityGUI {
 		panel_cityInService.add(scrollPaneCity);
 		
 		
-		// ----------- End Implementation of first service "City in Service" ------------------ //
+		// ----------- End Implementation of rpc "City in Service" ------------------ //
 		
 		
 		
@@ -198,11 +203,72 @@ public class smartCityGUI {
 		
 		JScrollPane scrollPaneTemperature = new JScrollPane(txtResponse);
 		
-		//textResponse.setSize(new Dimension(15, 30));
+		
 		panel_temperatureInCity.add(scrollPaneTemperature);
 		
 		
 		// ----------- End of Implementation of rpc TemperatureInCity ------------------ //
+		
+		
+		// ----------- Implementation of rpc Current Traffic ------------------ //
+		
+		// Create JPanel:
+		
+		JPanel panel_currentTraffic = new JPanel();
+		frame.getContentPane().add(panel_currentTraffic);
+		panel_currentTraffic.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
+		
+		// New Label for panel_currentTraffic:
+		JLabel trafficInCityLabel = new JLabel("Check traffic in city: ");
+		panel_currentTraffic.add(trafficInCityLabel);
+		
+		// Input text Box:
+		JTextField txtTraffic = new JTextField();
+		panel_currentTraffic.add(txtTraffic);
+		txtTraffic.setColumns(10);
+		
+		// Button to send request:
+		JButton trafficButton = new JButton("Check traffic");
+		
+		// Listening for Input:
+		trafficButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+				String city = txtTraffic.getText();
+				
+				currentTraffic.StringMessage cString = currentTraffic.StringMessage.newBuilder().setCity(city).build();
+				
+				
+				// Creating Iterator to pass stream messages from server:
+    			Iterator<currentTraffic.StringMessage> responses = currentTrafficbStub.currentTraffic(cString);
+    			
+    			// Assigning and printing responses from server:
+				while (responses.hasNext()) {
+					
+					currentTraffic.StringMessage individualResponse = responses.next();
+					currentTrafficResponse.append(individualResponse.getCity());
+					currentTrafficResponse.append(" ");
+					
+				}
+				
+			}
+
+		});
+		
+		panel_currentTraffic.add(trafficButton);
+		
+		currentTrafficResponse = new JTextArea(2, 45);
+		currentTrafficResponse .setLineWrap(true);
+		currentTrafficResponse.setWrapStyleWord(true);
+		
+		JScrollPane scrollPaneCurrentTraffic = new JScrollPane(currentTrafficResponse);
+		
+		panel_currentTraffic.add(scrollPaneCurrentTraffic);
+		// ----------- End of Implementation of rpc Current Traffic ------------------ //
+		
 		
 		
 		
