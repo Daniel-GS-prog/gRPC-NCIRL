@@ -16,10 +16,17 @@ import cityInService.IntMessage;
 import cityInService.StringMessage;
 import cityInService.cityInServiceGrpc;
 import cityInService.cityInServiceGrpc.cityInServiceBlockingStub;
+import currentTraffic.StringM;
+import currentTraffic.StringMOrBuilder;
 import currentTraffic.currentTrafficGrpc;
 import currentTraffic.currentTrafficGrpc.currentTrafficBlockingStub;
+import currentTraffic.currentTrafficGrpc.currentTrafficStub;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.stub.StreamObserver;
+import obstacles.Message;
+import obstacles.obstaclesGrpc;
+import obstacles.obstaclesGrpc.obstaclesStub;
 
 import java.awt.EventQueue;
 
@@ -27,11 +34,15 @@ public class smartCityGUI {
 	
 	private static cityInServiceBlockingStub cityInServicebStub;
 	private static currentTrafficBlockingStub currentTrafficbStub;
+	private static currentTrafficStub asyncStub;
+	private static obstaclesStub ObsasyncStub;
 	
 	private JFrame frame;
 	private JTextArea textResponse ;
 	private JTextArea txtResponse;
 	private JTextArea currentTrafficResponse;
+	private JTextArea TrafficInCityResponse;
+	private JTextArea ObstaclesResponse;
 	
 	// Launching application: 
 	
@@ -65,6 +76,8 @@ public class smartCityGUI {
 	// Create all stubs needed, pass the channel to the stub
 	 cityInServicebStub = cityInServiceGrpc.newBlockingStub(newChannel);
 	 currentTrafficbStub = currentTrafficGrpc.newBlockingStub(newChannel);
+	 asyncStub = currentTrafficGrpc.newStub(newChannel);
+	 ObsasyncStub = obstaclesGrpc.newStub(newChannel);
 	
 	initialize();
 	
@@ -195,6 +208,7 @@ public class smartCityGUI {
 				
 		});
 		
+		// Adding button to the panel
 		panel_temperatureInCity.add(temperatureButton);
 		
 		txtResponse = new JTextArea(2, 45);
@@ -219,8 +233,8 @@ public class smartCityGUI {
 		panel_currentTraffic.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
 		
 		// New Label for panel_currentTraffic:
-		JLabel trafficInCityLabel = new JLabel("Check traffic in city: ");
-		panel_currentTraffic.add(trafficInCityLabel);
+		JLabel trafficInCityCentreLabel = new JLabel("Check traffic city center: ");
+		panel_currentTraffic.add(trafficInCityCentreLabel);
 		
 		// Input text Box:
 		JTextField txtTraffic = new JTextField();
@@ -258,6 +272,7 @@ public class smartCityGUI {
 
 		});
 		
+		// Adding button to the panel
 		panel_currentTraffic.add(trafficButton);
 		
 		currentTrafficResponse = new JTextArea(2, 45);
@@ -267,10 +282,204 @@ public class smartCityGUI {
 		JScrollPane scrollPaneCurrentTraffic = new JScrollPane(currentTrafficResponse);
 		
 		panel_currentTraffic.add(scrollPaneCurrentTraffic);
+		
 		// ----------- End of Implementation of rpc Current Traffic ------------------ //
 		
 		
 		
+		// ----------- Implementation of rpc Traffic In City ------------------ //
 		
-	}
-}
+		// Create JPanel:
+		
+		JPanel panel_TrafficInCity = new JPanel();
+		frame.getContentPane().add(panel_TrafficInCity);
+		panel_TrafficInCity.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
+		
+		
+		// New Label for panel_currentTraffic:
+		JLabel trafficInCityLabel = new JLabel("Check traffic in city: ");
+		panel_currentTraffic.add(trafficInCityLabel);
+		
+		// Input text Boxes:
+		JTextField txtTrafficInCity1 = new JTextField();
+		JTextField txtTrafficInCity2 = new JTextField();
+		JTextField txtTrafficInCity3 = new JTextField();
+		
+		panel_TrafficInCity.add(txtTrafficInCity1);
+		panel_TrafficInCity.add(txtTrafficInCity2);
+		panel_TrafficInCity.add(txtTrafficInCity3);
+		
+		txtTrafficInCity1.setColumns(10);
+		txtTrafficInCity2.setColumns(10);
+		txtTrafficInCity3.setColumns(10);
+		
+		// Button to send request:
+		JButton trafficCityButton = new JButton("traffic 3 streets");
+		
+		// Listening for Input:
+		trafficCityButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				StreamObserver<StringM> responseObserver = new StreamObserver<StringM>() {
+
+					@Override
+					public void onNext(StringM value) {
+						// TODO Auto-generated method stub
+						System.out.println(value.getCity1());
+						
+					}
+
+					@Override
+					public void onError(Throwable t) {
+						// TODO Auto-generated method stub
+						
+					}
+
+					@Override
+					public void onCompleted() {
+						// TODO Auto-generated method stub
+						
+					}};
+					
+					StreamObserver<StringM> requestObserver = asyncStub.trafficInCity(responseObserver);
+				
+					String city1 = txtTrafficInCity1.getText();
+					requestObserver.onNext(StringM.newBuilder().setCity1(city1).build());
+					
+					String city2 = txtTrafficInCity2.getText();
+					requestObserver.onNext(StringM.newBuilder().setCity1(city2).build());
+					
+					String city3 = txtTrafficInCity3.getText();
+					requestObserver.onNext(StringM.newBuilder().setCity1(city3).build());
+					
+					requestObserver.onCompleted();
+					
+					// Sending client to sleep:
+					try {
+						Thread.sleep(2000);
+					} catch (InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				
+			}
+			
+		});	
+		
+		// Adding button to the panel
+		panel_TrafficInCity.add(trafficCityButton);
+		
+		TrafficInCityResponse = new JTextArea(2, 45);
+		TrafficInCityResponse .setLineWrap(true);
+		TrafficInCityResponse.setWrapStyleWord(true);
+		
+		JScrollPane scrollPaneTraffic = new JScrollPane(TrafficInCityResponse);
+		
+		panel_TrafficInCity.add(scrollPaneTraffic);
+		
+		
+		// ----------- End of Implementation of rpc Traffic In City ------------------ //
+		
+		
+		
+		
+		
+		// ----------- Implementation of rpc obstacles ------------------ //
+		
+		
+		// Create JPanel:
+		
+		JPanel panel_obstacles = new JPanel();
+		frame.getContentPane().add(panel_obstacles);
+		panel_obstacles.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
+		
+		// New Label for panel_currentTraffic:
+		JLabel obstaclesLabel = new JLabel("Obstacles in city: ");
+		panel_obstacles.add(obstaclesLabel);
+		
+		// Input text Boxes:
+		JTextField txtObstacles1 = new JTextField();
+		JTextField txtObstacles2 = new JTextField();
+		JTextField txtObstacles3 = new JTextField();
+		
+		panel_obstacles.add(txtObstacles1);
+		panel_obstacles.add(txtObstacles2);
+		panel_obstacles.add(txtObstacles3);
+		
+		txtObstacles1.setColumns(10);
+		txtObstacles2.setColumns(10);
+		txtObstacles3.setColumns(10);
+		
+		// Button to send request:
+		JButton ObstaclesCityButton = new JButton("Obstacles 3 streets");
+		
+		
+		// Listening for Input:
+		ObstaclesCityButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+				StreamObserver<Message> responseObserver = new StreamObserver<Message>() {
+
+					@Override
+					public void onNext(Message value) {
+						// TODO Auto-generated method stub
+						System.out.println(value.getStreets());
+						
+					}
+
+					@Override
+					public void onError(Throwable t) {
+						// TODO Auto-generated method stub
+						
+					}
+
+					@Override
+					public void onCompleted() {
+						// TODO Auto-generated method stub
+						
+					}};
+				StreamObserver<Message> requestObserver = ObsasyncStub.obstaclesInRoad(responseObserver);
+				
+				String city1 = txtObstacles1.getText();
+				requestObserver.onNext(Message.newBuilder().setStreets(city1).build());
+				
+				String city2 = txtObstacles2.getText();
+				requestObserver.onNext(Message.newBuilder().setStreets(city2).build());
+				
+				String city3 = txtObstacles3.getText();
+				requestObserver.onNext(Message.newBuilder().setStreets(city3).build());
+				
+				requestObserver.onCompleted();
+				
+				// Sending client to sleep:
+					try {
+						Thread.sleep(2000);
+					} catch (InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+			}});
+		
+		// Adding button to the panel
+		panel_obstacles.add(ObstaclesCityButton);
+		
+		ObstaclesResponse = new JTextArea(2, 45);
+		ObstaclesResponse.setLineWrap(true);
+		ObstaclesResponse.setWrapStyleWord(true);
+		
+		JScrollPane scrollPaneObstacles = new JScrollPane(ObstaclesResponse);
+		
+		panel_obstacles.add(scrollPaneObstacles);
+		
+		
+		// ----------- End of Implementation of rpc obstacles ------------------ //
+		
+		
+		
+		
+}}

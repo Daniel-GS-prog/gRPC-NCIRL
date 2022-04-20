@@ -102,12 +102,12 @@ import io.grpc.stub.StreamObserver;
             	
             		// ---- Implementation of rpc TrafficInCity ---------------------------
             		
-            		StreamObserver<StringMessage> responseObserver = new StreamObserver<StringMessage>() {
+            		StreamObserver<StringM> responseObserver = new StreamObserver<StringM>() {
 
 						@Override
-						public void onNext(StringMessage value) {
+						public void onNext(StringM value) {
 							// TODO Auto-generated method stub
-							System.out.println(value.getCity());
+							System.out.println(value.getCity1());
 						}
 
 						@Override
@@ -126,7 +126,7 @@ import io.grpc.stub.StreamObserver;
 					currentTrafficStub asyncStub = currentTrafficGrpc.newStub(newChannel);
 					
 					
-					StreamObserver<StringMessage> requestObserver = asyncStub.trafficInCity(responseObserver);
+					StreamObserver<StringM> requestObserver = asyncStub.trafficInCity(responseObserver);
 					
 					// while loop to get all the information from client:
 					int count = 0;
@@ -138,7 +138,7 @@ import io.grpc.stub.StreamObserver;
 	    				System.out.println();
 	    				
 	    				// Passing input to server:
-	    				requestObserver.onNext(StringMessage.newBuilder().setCity(city).build());
+	    				requestObserver.onNext(StringM.newBuilder().setCity1(city).build());
 	    				count ++;
 					}
 					

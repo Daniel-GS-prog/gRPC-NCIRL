@@ -130,21 +130,21 @@ public class currentTrafficServer {
 		// --------------- Implementation of rpc TrafficInCity ----------------------------------------
 		
 		
-		public StreamObserver <StringMessage> trafficInCity(StreamObserver<StringMessage> responseObserver){
+		public StreamObserver <StringM> trafficInCity(StreamObserver<StringM> responseObserver){
 			
 			//Checking we are in client streaming service:
 			System.out.println("Server: inside the client streaming method ");
 			
-			return new StreamObserver<StringMessage>() {
+			return new StreamObserver<StringM>() {
 				
 				
 				@Override
 				//Verify message from client:
-				public void onNext(StringMessage value) {
+				public void onNext(StringM value) {
 					// TODO Auto-generated method stub
 					
 					// Receiving message from client:
-					System.out.println("Server has received the message: " + value.getCity());
+					System.out.println("Server has received the message: " + value.getCity1());
 					
 				}
 
@@ -158,10 +158,10 @@ public class currentTrafficServer {
 				public void onCompleted() {
 					// TODO Auto-generated method stub
 					
-					StringMessage.Builder responseBuilder = StringMessage.newBuilder();
+					StringM.Builder responseBuilder = StringM.newBuilder();
 					
 					//Building message to client:
-					responseBuilder.setCity("For the selected streets the traffic is excellent." );
+					responseBuilder.setCity1("For the selected streets the traffic is excellent." );
 					
 					//Sending message to client with responseObserver:
 					responseObserver.onNext(responseBuilder.build());

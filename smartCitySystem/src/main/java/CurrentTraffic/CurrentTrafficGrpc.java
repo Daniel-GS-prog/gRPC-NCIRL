@@ -59,30 +59,30 @@ public final class currentTrafficGrpc {
      return getCurrentTrafficMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<currentTraffic.StringMessage,
-      currentTraffic.StringMessage> getTrafficInCityMethod;
+  private static volatile io.grpc.MethodDescriptor<currentTraffic.StringM,
+      currentTraffic.StringM> getTrafficInCityMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "TrafficInCity",
-      requestType = currentTraffic.StringMessage.class,
-      responseType = currentTraffic.StringMessage.class,
+      requestType = currentTraffic.StringM.class,
+      responseType = currentTraffic.StringM.class,
       methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-  public static io.grpc.MethodDescriptor<currentTraffic.StringMessage,
-      currentTraffic.StringMessage> getTrafficInCityMethod() {
-    io.grpc.MethodDescriptor<currentTraffic.StringMessage, currentTraffic.StringMessage> getTrafficInCityMethod;
+  public static io.grpc.MethodDescriptor<currentTraffic.StringM,
+      currentTraffic.StringM> getTrafficInCityMethod() {
+    io.grpc.MethodDescriptor<currentTraffic.StringM, currentTraffic.StringM> getTrafficInCityMethod;
     if ((getTrafficInCityMethod = currentTrafficGrpc.getTrafficInCityMethod) == null) {
       synchronized (currentTrafficGrpc.class) {
         if ((getTrafficInCityMethod = currentTrafficGrpc.getTrafficInCityMethod) == null) {
           currentTrafficGrpc.getTrafficInCityMethod = getTrafficInCityMethod = 
-              io.grpc.MethodDescriptor.<currentTraffic.StringMessage, currentTraffic.StringMessage>newBuilder()
+              io.grpc.MethodDescriptor.<currentTraffic.StringM, currentTraffic.StringM>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
               .setFullMethodName(generateFullMethodName(
                   "currentTraffic.currentTraffic", "TrafficInCity"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  currentTraffic.StringMessage.getDefaultInstance()))
+                  currentTraffic.StringM.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  currentTraffic.StringMessage.getDefaultInstance()))
+                  currentTraffic.StringM.getDefaultInstance()))
                   .setSchemaDescriptor(new currentTrafficMethodDescriptorSupplier("TrafficInCity"))
                   .build();
           }
@@ -127,8 +127,8 @@ public final class currentTrafficGrpc {
 
     /**
      */
-    public io.grpc.stub.StreamObserver<currentTraffic.StringMessage> trafficInCity(
-        io.grpc.stub.StreamObserver<currentTraffic.StringMessage> responseObserver) {
+    public io.grpc.stub.StreamObserver<currentTraffic.StringM> trafficInCity(
+        io.grpc.stub.StreamObserver<currentTraffic.StringM> responseObserver) {
       return asyncUnimplementedStreamingCall(getTrafficInCityMethod(), responseObserver);
     }
 
@@ -145,8 +145,8 @@ public final class currentTrafficGrpc {
             getTrafficInCityMethod(),
             asyncClientStreamingCall(
               new MethodHandlers<
-                currentTraffic.StringMessage,
-                currentTraffic.StringMessage>(
+                currentTraffic.StringM,
+                currentTraffic.StringM>(
                   this, METHODID_TRAFFIC_IN_CITY)))
           .build();
     }
@@ -180,8 +180,8 @@ public final class currentTrafficGrpc {
 
     /**
      */
-    public io.grpc.stub.StreamObserver<currentTraffic.StringMessage> trafficInCity(
-        io.grpc.stub.StreamObserver<currentTraffic.StringMessage> responseObserver) {
+    public io.grpc.stub.StreamObserver<currentTraffic.StringM> trafficInCity(
+        io.grpc.stub.StreamObserver<currentTraffic.StringM> responseObserver) {
       return asyncClientStreamingCall(
           getChannel().newCall(getTrafficInCityMethod(), getCallOptions()), responseObserver);
     }
@@ -269,7 +269,7 @@ public final class currentTrafficGrpc {
       switch (methodId) {
         case METHODID_TRAFFIC_IN_CITY:
           return (io.grpc.stub.StreamObserver<Req>) serviceImpl.trafficInCity(
-              (io.grpc.stub.StreamObserver<currentTraffic.StringMessage>) responseObserver);
+              (io.grpc.stub.StreamObserver<currentTraffic.StringM>) responseObserver);
         default:
           throw new AssertionError();
       }
