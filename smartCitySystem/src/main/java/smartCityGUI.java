@@ -10,6 +10,8 @@ import javax.swing.JTextField;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.Iterator;
 
 import cityInService.IntMessage;
@@ -127,10 +129,14 @@ public class smartCityGUI {
 		
 		// Listening for Input:
 		submit.addActionListener(new ActionListener() {
-
+			
+			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
+				
+				// Clearing JTextArea:
+				textResponse.setText("");
 				
 				String city = textCity.getText();
 				
@@ -192,6 +198,9 @@ public class smartCityGUI {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				
+				// Clearing JTextArea:
+				txtResponse.setText("");
+				
 				String city = txtCity.getText();
 				
 				StringMessage cString = StringMessage.newBuilder().setCity(city).build();
@@ -201,6 +210,8 @@ public class smartCityGUI {
 				
 				String str1 = String.valueOf(response.getTemperature());
 				
+				
+				// Displaying message in GUI:
 				txtResponse.append("The temperature in " + city + " is: " + str1 + " degrees celsius.");
 				
 				
@@ -251,6 +262,9 @@ public class smartCityGUI {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				
+				// Clearing JText area:
+				currentTrafficResponse.setText("");
+				
 				String city = txtTraffic.getText();
 				
 				currentTraffic.StringMessage cString = currentTraffic.StringMessage.newBuilder().setCity(city).build();
@@ -259,7 +273,7 @@ public class smartCityGUI {
 				// Creating Iterator to pass stream messages from server:
     			Iterator<currentTraffic.StringMessage> responses = currentTrafficbStub.currentTraffic(cString);
     			
-    			// Assigning and printing responses from server:
+    			// Assigning and printing responses from server in GUI:
 				while (responses.hasNext()) {
 					
 					currentTraffic.StringMessage individualResponse = responses.next();
@@ -327,6 +341,11 @@ public class smartCityGUI {
 					@Override
 					public void onNext(StringM value) {
 						// TODO Auto-generated method stub
+						
+						// clearing TextArea:
+						TrafficInCityResponse.setText("");
+						
+						// Displaying message in GUI
 						TrafficInCityResponse.append(value.getCity1());				}
 
 					@Override
@@ -343,6 +362,7 @@ public class smartCityGUI {
 					
 					StreamObserver<StringM> requestObserver = asyncStub.trafficInCity(responseObserver);
 				
+					
 					String city1 = txtTrafficInCity1.getText();
 					requestObserver.onNext(StringM.newBuilder().setCity1(city1).build());
 					
@@ -421,11 +441,14 @@ public class smartCityGUI {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				
+				
 				StreamObserver<Message> responseObserver = new StreamObserver<Message>() {
 
 					@Override
 					public void onNext(Message value) {
 						// TODO Auto-generated method stub
+						
+						// Displaying message in GUI
 						ObstaclesResponse.append(value.getStreets());
 						
 					}
@@ -441,6 +464,7 @@ public class smartCityGUI {
 						// TODO Auto-generated method stub
 						
 					}};
+					
 				StreamObserver<Message> requestObserver = ObsasyncStub.obstaclesInRoad(responseObserver);
 				
 				String city1 = txtObstacles1.getText();
@@ -453,6 +477,10 @@ public class smartCityGUI {
 				requestObserver.onNext(Message.newBuilder().setStreets(city3).build());
 				
 				requestObserver.onCompleted();
+				
+				// clearing TextArea:
+				ObstaclesResponse.setText("");
+				
 				
 				// Sending client to sleep:
 					try {
