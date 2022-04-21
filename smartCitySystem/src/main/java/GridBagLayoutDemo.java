@@ -7,19 +7,23 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import java.awt.GridBagLayout;
+
 import java.awt.GridBagConstraints;
 
 
 public class GridBagLayoutDemo extends JFrame{
 	
+	
 	public GridBagLayoutDemo() {
+		
 		
 		GridBagConstraints gbc = new GridBagConstraints();
 		GridBagLayout layout = new GridBagLayout();
+		
 		this.setSize(1200,550);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setTitle("Smart City");
-		this.setLocationRelativeTo(null);
+		//this.setLocationRelativeTo(null);
 		this.setLayout(layout);
 		
 		//  // ----------- Implementation of rpc "City in Service" ------------------ //
@@ -242,11 +246,10 @@ public class GridBagLayoutDemo extends JFrame{
 		gbc.gridy = 13;
 		this.add(scrollPaneObstacles, gbc);
 		
-//		// ----------- End of Implementation of rpc obstacles ------------------ //
+	// ----------- End of Implementation of rpc obstacles ------------------ //
 //		
-//		
+	
 		this.setVisible(true);
 		
 	}
-
 }

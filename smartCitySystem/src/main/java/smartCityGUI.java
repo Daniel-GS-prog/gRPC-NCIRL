@@ -91,7 +91,7 @@ public class smartCityGUI {
 		frame.setTitle("Smart city gRPC");
 		
 		// Dimensions:
-		frame.setBounds(100, 100, 1100, 300);
+		frame.setBounds(100, 100, 1400, 500);
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -298,7 +298,7 @@ public class smartCityGUI {
 		
 		// New Label for panel_currentTraffic:
 		JLabel trafficInCityLabel = new JLabel("Check traffic in city: ");
-		panel_currentTraffic.add(trafficInCityLabel);
+		panel_TrafficInCity.add(trafficInCityLabel);
 		
 		// Input text Boxes:
 		JTextField txtTrafficInCity1 = new JTextField();
