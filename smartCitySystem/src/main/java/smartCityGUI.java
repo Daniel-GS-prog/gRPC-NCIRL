@@ -327,9 +327,7 @@ public class smartCityGUI {
 					@Override
 					public void onNext(StringM value) {
 						// TODO Auto-generated method stub
-						System.out.println(value.getCity1());
-						
-					}
+						TrafficInCityResponse.append(value.getCity1());				}
 
 					@Override
 					public void onError(Throwable t) {
@@ -428,7 +426,7 @@ public class smartCityGUI {
 					@Override
 					public void onNext(Message value) {
 						// TODO Auto-generated method stub
-						System.out.println(value.getStreets());
+						ObstaclesResponse.append(value.getStreets());
 						
 					}
 
